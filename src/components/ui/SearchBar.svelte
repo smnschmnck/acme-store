@@ -9,7 +9,7 @@
 	class="flex h-10 rounded-lg bg-zinc-100 focus-within:outline focus-within:outline-1 focus-within:outline-blue-500"
 >
 	<select
-		class="m-0.5 flex w-20 cursor-pointer appearance-none text-ellipsis rounded-l-md bg-white p-1 text-center text-xs font-medium hover:bg-zinc-50"
+		class="m-0.5 flex w-20 cursor-pointer appearance-none text-ellipsis rounded-l-md bg-white p-1 text-center text-sm font-medium hover:bg-zinc-50"
 		name="category"
 		id="category-select"
 	>
@@ -26,7 +26,7 @@
 			type="text"
 			placeholder="Search products"
 			name="searchQuery"
-			class="h-full w-full bg-transparent text-xs placeholder-zinc-500 outline-none placeholder:text-xs"
+			class="h-full w-full bg-transparent text-sm placeholder-zinc-500 outline-none placeholder:text-sm"
 		/>
 	</div>
 	<Button type="submit" className="rounded-l-none">Search</Button>

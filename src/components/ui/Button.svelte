@@ -10,7 +10,7 @@
 
 <button
 	class={twMerge(
-		'rounded-md bg-black px-6 text-xs font-medium text-white transition hover:bg-zinc-700',
+		'rounded-md bg-black px-6 text-sm font-medium text-white transition hover:bg-zinc-700',
 		className
 	)}
 	{...$$restProps}

@@ -6,6 +6,6 @@
 	export let className: string = '';
 </script>
 
-<h2 class={twMerge("w-fit font-['Poppins'] text-3xl font-bold", className)} {...$$restProps}>
+<h2 class={twMerge("w-fit font-['Poppins'] text-2xl font-bold", className)} {...$$restProps}>
 	<slot />
 </h2>
