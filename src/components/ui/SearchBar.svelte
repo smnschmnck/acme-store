@@ -26,7 +26,7 @@
 			type="text"
 			placeholder="Search products"
 			name="searchQuery"
-			class=" h-full w-full bg-transparent text-xs placeholder-zinc-500 outline-none placeholder:text-xs"
+			class="h-full w-full bg-transparent text-xs placeholder-zinc-500 outline-none placeholder:text-xs"
 		/>
 	</div>
 	<Button type="submit" className="rounded-l-none">Search</Button>
