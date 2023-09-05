@@ -9,7 +9,7 @@
 	class="flex h-10 rounded-lg bg-zinc-100 focus-within:outline focus-within:outline-1 focus-within:outline-blue-500"
 >
 	<select
-		class="m-0.5 flex w-20 cursor-pointer appearance-none text-ellipsis rounded-l-md bg-white p-1 text-center text-sm font-medium hover:bg-zinc-50"
+		class="m-0.5 w-28 rounded-l-md bg-white text-sm font-medium outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
 		name="category"
 		id="category-select"
 	>
