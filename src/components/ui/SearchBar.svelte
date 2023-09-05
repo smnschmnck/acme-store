@@ -15,7 +15,7 @@
 		<option value="Pants">Pants</option>
 		<option value="T-Shirts">T-Shirts</option>
 	</Select>
-	<div class="flex w-72 items-center justify-center gap-1 px-2">
+	<div class="flex w-80 items-center justify-center gap-1 px-2">
 		<div class="text-zinc-500">
 			<MagnifyingGlass />
 		</div>
