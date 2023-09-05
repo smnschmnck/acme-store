@@ -1,16 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Overwrite uggo default css */
-select {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background-image: url('/icons/chevron-down.svg');
-	background-position-x: calc(100% - 1rem); /* Adjust as needed */
-	background-position-y: center;
-	background-repeat: no-repeat;
-	padding-right: 2.5rem; /* This padding adds space for the arrow */
-	padding-left: 1rem;
-}
