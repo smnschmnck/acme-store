@@ -6,14 +6,18 @@
 </script>
 
 <form method="get" autocomplete="off" class="flex gap-2">
-	<Select className="w-28">
-		<option value="All">All</option>
-		<option value="Shoes">Shoes</option>
-		<option value="Pants">Pants</option>
-		<option value="T-Shirts">T-Shirts</option>
-	</Select>
-	<Input type="text" placeholder="Search products" name="searchQuery">
-		<MagnifyingGlass slot="icon" />
-	</Input>
+	<div class="w-28">
+		<Select>
+			<option value="All">All</option>
+			<option value="Shoes">Shoes</option>
+			<option value="Pants">Pants</option>
+			<option value="T-Shirts">T-Shirts</option>
+		</Select>
+	</div>
+	<div class="w-80">
+		<Input type="text" placeholder="Search products" name="searchQuery">
+			<MagnifyingGlass slot="icon" />
+		</Input>
+	</div>
 	<Button type="submit">Search</Button>
 </form>
