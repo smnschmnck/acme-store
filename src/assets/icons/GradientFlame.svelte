@@ -1,4 +1,8 @@
-<svg class="h-full w-full" viewBox="0 0 31 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<script lang="ts">
+	export let dimensions: `h-${number} w-${number}` = 'h-6 w-6';
+</script>
+
+<svg class={dimensions} viewBox="0 0 31 34" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
