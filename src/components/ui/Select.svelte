@@ -10,7 +10,7 @@
 
 <select
 	class={twMerge(
-		'w-full rounded-lg bg-zinc-200 text-sm font-medium outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500',
+		'w-full cursor-pointer rounded-lg bg-zinc-100 text-sm font-medium outline-none hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500',
 		className
 	)}
 	name="category"
