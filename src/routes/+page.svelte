@@ -1,5 +1,6 @@
 <script>
 	import GradientFlame from '../assets/icons/GradientFlame.svelte';
+	import ProductListing from '../components/ProductListing.svelte';
 	import Heading from '../components/ui/Heading.svelte';
 </script>
 
@@ -10,5 +11,8 @@
 		</div>
 		<Heading>Trending Products</Heading>
 	</div>
-	<div class="flex h-32 gap-2 bg-zinc-100 p-2">todo</div>
+	<div class="flex gap-2 bg-zinc-100 p-2">
+		<ProductListing />
+		<ProductListing />
+	</div>
 </div>
