@@ -1,11 +1,11 @@
 <script>
-	import GradientFlame from '../assets/icons/GradientFlame.svelte';
+	import GradientHeart from '../assets/icons/GradientHeart.svelte';
 	import Heading from '../components/ui/Heading.svelte';
 </script>
 
 <div class="flex flex-col gap-8">
 	<div class="flex items-center gap-2">
-		<GradientFlame dimensions="h-6 w-6" />
+		<GradientHeart dimensions="h-6 w-6" />
 		<Heading>Popular categories</Heading>
 	</div>
 	<div class="flex gap-20 text-sm">

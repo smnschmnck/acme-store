@@ -4,7 +4,7 @@
 	import SearchBar from './ui/SearchBar.svelte';
 </script>
 
-<header class="flex h-24 items-center justify-between border-b border-b-zinc-200 px-12">
+<header class="flex h-24 items-center justify-between border-b border-b-zinc-200 px-16">
 	<div class="flex gap-16">
 		<a href="/" class="flex items-center gap-1">
 			<Heading>acme</Heading>

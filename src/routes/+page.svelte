@@ -1,7 +1,4 @@
 <script>
-	import GradientFlame from '../assets/icons/GradientFlame.svelte';
-	import ProductListing from '../components/ProductListing.svelte';
-	import Heading from '../components/ui/Heading.svelte';
 	import LastViewed from './_LastViewed.svelte';
 	import PopularCategories from './_PopularCategories.svelte';
 	import TrendingProducts from './_TrendingProducts.svelte';

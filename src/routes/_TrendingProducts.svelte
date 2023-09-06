@@ -1,4 +1,5 @@
 <script>
+	import ArrowRight from '../assets/icons/ArrowRight.svelte';
 	import GradientFlame from '../assets/icons/GradientFlame.svelte';
 	import ProductListing from '../components/ProductListing.svelte';
 	import Heading from '../components/ui/Heading.svelte';
@@ -18,5 +19,14 @@
 			<ProductListing />
 			<ProductListing />
 		</div>
+	</div>
+	<div class="flex w-full justify-end">
+		<a
+			href="/"
+			class="flex items-center gap-2 border-b border-b-transparent text-sm font-medium text-blue-500 hover:border-b-blue-500"
+		>
+			See more trending products
+			<ArrowRight dimensions="h-4 w-4" />
+		</a>
 	</div>
 </div>
