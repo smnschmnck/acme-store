@@ -1,7 +1,13 @@
-<script>
+<script lang="ts">
 	import ShoppingCart from '../assets/icons/ShoppingCart.svelte';
 	import Heading from './ui/Heading.svelte';
 	import SearchBar from './ui/SearchBar.svelte';
+
+	export let searchData: {
+		searchQuery: string;
+		category: string;
+		allCategories: string[];
+	};
 </script>
 
 <header class="flex h-24 items-center justify-between border-b border-b-zinc-200 px-16">
@@ -11,7 +17,11 @@
 			<Heading className="font-normal">store</Heading>
 		</a>
 		<div class="flex items-center gap-12">
-			<SearchBar />
+			<SearchBar
+				searchQuery={searchData.searchQuery}
+				category={searchData.category}
+				allCategories={searchData.allCategories}
+			/>
 			<div class="flex gap-8 text-sm text-zinc-500">
 				<a class="transition hover:text-black" href="/">See order details</a>
 				<a class="transition hover:text-black" href="/">Rate an order</a>
