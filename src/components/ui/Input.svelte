@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 
-	interface $$Props extends Partial<HTMLInputElement> {
+	interface $$Props extends Partial<Omit<HTMLInputElement, 'list'>> {
 		className?: string;
+		list?: string;
 	}
 
 	export let className = '';
+	export let list = '';
 </script>
 
 <div
@@ -19,6 +21,7 @@
 			'h-full w-full bg-transparent text-sm placeholder-zinc-500 outline-none placeholder:text-sm',
 			className
 		)}
+		{list}
 		{...$$restProps}
 	/>
 </div>
