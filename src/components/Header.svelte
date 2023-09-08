@@ -12,7 +12,7 @@
 </script>
 
 <header
-	class="flex items-center justify-between gap-4 border-b border-b-zinc-200 px-4 py-4 sm:px-10 md:h-24 md:py-0 2xl:px-16"
+	class="flex items-center justify-between gap-4 border-b border-b-zinc-200 px-6 py-4 sm:px-10 md:h-24 md:py-0 2xl:px-16"
 >
 	<div class="flex w-full flex-col gap-2 md:flex-row md:gap-16">
 		<div class="flex justify-between">
