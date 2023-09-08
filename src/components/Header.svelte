@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ShoppingCart from '../assets/icons/ShoppingCart.svelte';
+	import BurgerMenu from '../assets/icons/BurgerMenu.svelte';
+	import ShoppingCartLink from './ShoppingCartLink.svelte';
 	import Heading from './ui/Heading.svelte';
 	import SearchBar from './ui/SearchBar.svelte';
 
@@ -10,30 +11,37 @@
 	};
 </script>
 
-<header class="flex h-24 items-center justify-between border-b border-b-zinc-200 px-8 2xl:px-16">
-	<div class="hidden gap-16 sm:flex">
-		<a href="/" class="flex items-center gap-1">
-			<Heading>acme</Heading>
-			<Heading className="font-normal">store</Heading>
-		</a>
-		<div class="flex items-center gap-12">
+<header
+	class="flex items-center justify-between gap-4 border-b border-b-zinc-200 px-4 py-4 md:h-24 md:px-10 md:py-0 2xl:px-16"
+>
+	<div class="flex w-full flex-col gap-2 md:flex-row md:gap-16">
+		<div class="flex justify-between">
+			<a href="/" class="flex items-center gap-1">
+				<Heading>acme</Heading>
+				<Heading className="font-normal">store</Heading>
+			</a>
+			<div class="flex items-center gap-4 md:hidden">
+				<ShoppingCartLink />
+				<BurgerMenu />
+			</div>
+		</div>
+		<div class="flex w-full items-center gap-4 md:gap-12">
 			<SearchBar
 				searchQuery={searchData.searchQuery}
 				category={searchData.category}
 				allCategories={searchData.allCategories}
 			/>
-			<div class="flex gap-8 text-sm text-zinc-500">
+			<div class="hidden gap-8 text-sm text-zinc-500 xl:flex">
 				<a class="whitespace-nowrap transition hover:text-black" href="/">See order details</a>
 				<a class="whitespace-nowrap transition hover:text-black" href="/">Rate an order</a>
 				<a class="whitespace-nowrap transition hover:text-black" href="/">Wishlist</a>
 			</div>
 		</div>
 	</div>
-	<a href="/" class="relative rounded-lg p-2 transition hover:bg-zinc-100">
-		<span
-			class="absolute right-0 top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-medium text-white"
-			>2</span
-		>
-		<ShoppingCart />
-	</a>
+	<div class="hidden md:block">
+		<ShoppingCartLink />
+	</div>
+	<div class="hidden md:block xl:hidden">
+		<BurgerMenu />
+	</div>
 </header>

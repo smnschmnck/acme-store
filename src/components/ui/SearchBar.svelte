@@ -9,8 +9,8 @@
 	export let allCategories: string[];
 </script>
 
-<form method="get" action="/search" autocomplete="off" class="flex gap-2">
-	<div class="w-32">
+<form method="get" action="/search" autocomplete="off" class="flex w-full gap-2 md:w-fit">
+	<div class="hidden w-48 sm:block">
 		<Select>
 			<option value="All">All</option>
 			{#each allCategories as c}
@@ -23,10 +23,8 @@
 			{/each}
 		</Select>
 	</div>
-	<div class="w-80">
-		<Input value={searchQuery} type="text" placeholder="Search products" name="searchQuery">
-			<MagnifyingGlass slot="icon" />
-		</Input>
-	</div>
+	<Input value={searchQuery} type="text" placeholder="Search products" name="searchQuery">
+		<MagnifyingGlass slot="icon" />
+	</Input>
 	<Button type="submit">Search</Button>
 </form>

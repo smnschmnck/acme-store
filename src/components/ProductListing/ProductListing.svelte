@@ -10,7 +10,7 @@
 	export let seller: Sellers;
 </script>
 
-<div class="flex h-40 w-full justify-between gap-2 bg-white p-4">
+<div class="flex h-40 w-full flex-col justify-between gap-2 bg-white p-4 lg:flex-row">
 	<div class="flex w-full gap-4 overflow-clip">
 		<div class="aspect-square h-full rounded-lg bg-zinc-300" />
 		<div class="flex h-full flex-col justify-between">
