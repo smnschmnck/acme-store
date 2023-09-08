@@ -10,12 +10,14 @@
 	export let seller: Sellers;
 </script>
 
-<div class="flex h-40 w-full justify-between bg-white p-4">
-	<div class="flex w-full gap-4">
+<div class="flex h-40 w-full justify-between gap-2 bg-white p-4">
+	<div class="flex w-full gap-4 overflow-clip">
 		<div class="aspect-square h-full rounded-lg bg-zinc-300" />
 		<div class="flex h-full flex-col justify-between">
 			<div class="flex flex-col gap-0.5 text-sm">
-				<a href={`/item/${id}`} class="font-bold hover:underline">{name}</a>
+				<a href={`/item/${id}`} class="line-clamp-1 w-full overflow-clip font-bold hover:underline"
+					>{name}</a
+				>
 				<p class="font-medium text-zinc-500">{category}</p>
 				<StarRating rating={Number(rating)} />
 			</div>

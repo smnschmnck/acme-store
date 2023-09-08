@@ -5,6 +5,9 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter']
+			},
+			screens: {
+				'2xl': '1340px'
 			}
 		}
 	},

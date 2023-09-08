@@ -8,7 +8,7 @@
 		<GradientHeart dimensions="h-6 w-6" />
 		<Heading>Popular categories</Heading>
 	</div>
-	<div class="flex gap-20 text-sm">
+	<div class="flex justify-between gap-20 text-sm lg:justify-start">
 		<div class="flex flex-col gap-4">
 			<h3 class="font-bold">Shoes</h3>
 			<ul class="flex flex-col gap-2">
@@ -61,7 +61,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="flex gap-20 text-sm">
+	<div class="flex justify-between gap-20 text-sm lg:justify-start">
 		<div class="flex flex-col gap-4">
 			<h3 class="font-bold">Shoes</h3>
 			<ul class="flex flex-col gap-2">

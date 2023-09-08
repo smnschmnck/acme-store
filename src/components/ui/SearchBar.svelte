@@ -10,7 +10,7 @@
 </script>
 
 <form method="get" action="/search" autocomplete="off" class="flex gap-2">
-	<div class="w-28">
+	<div class="w-32">
 		<Select>
 			<option value="All">All</option>
 			{#each allCategories as c}

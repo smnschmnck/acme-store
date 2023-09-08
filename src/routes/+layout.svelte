@@ -11,7 +11,7 @@
 </svelte:head>
 <div>
 	<Header searchData={data.searchData} />
-	<div class="px-16">
+	<div class="px-8 2xl:px-16">
 		<slot />
 	</div>
 </div>

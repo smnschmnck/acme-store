@@ -9,12 +9,15 @@
 
 <div>
 	{#each products as p}
-		<ProductListing
-			id={p.id}
-			name={p.name}
-			price={p.price}
-			category={p.category}
-			rating={p.rating}
-			seller={p.seller}
-		/>{/each}
+		<div class="border-b border-b-zinc-300">
+			<ProductListing
+				id={p.id}
+				name={p.name}
+				price={p.price}
+				category={p.category}
+				rating={p.rating}
+				seller={p.seller}
+			/>
+		</div>
+	{/each}
 </div>

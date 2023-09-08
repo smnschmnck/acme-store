@@ -15,7 +15,7 @@
 		<GradientFlame dimensions="h-6 w-6" />
 		<Heading>Trending products</Heading>
 	</div>
-	<div class="flex gap-2 bg-zinc-100 p-2">
+	<div class="flex flex-col gap-2 bg-zinc-100 p-2 lg:flex-row">
 		<div class="flex w-full flex-col gap-2">
 			{#each firstTwo as p}
 				<ProductListing

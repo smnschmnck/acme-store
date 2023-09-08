@@ -9,7 +9,7 @@
 
 <div>
 	<TrendingProducts trendingProducts={data.products} />
-	<div class="flex gap-16 pt-10">
+	<div class="flex flex-col gap-16 pt-10 lg:flex-row">
 		<PopularCategories />
 		<div class="w-0.5 flex-initial bg-zinc-200" />
 		<LastViewed lastViewedProducts={data.products} />

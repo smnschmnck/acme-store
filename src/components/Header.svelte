@@ -10,8 +10,8 @@
 	};
 </script>
 
-<header class="flex h-24 items-center justify-between border-b border-b-zinc-200 px-16">
-	<div class="flex gap-16">
+<header class="flex h-24 items-center justify-between border-b border-b-zinc-200 px-8 2xl:px-16">
+	<div class="hidden gap-16 sm:flex">
 		<a href="/" class="flex items-center gap-1">
 			<Heading>acme</Heading>
 			<Heading className="font-normal">store</Heading>
@@ -23,9 +23,9 @@
 				allCategories={searchData.allCategories}
 			/>
 			<div class="flex gap-8 text-sm text-zinc-500">
-				<a class="transition hover:text-black" href="/">See order details</a>
-				<a class="transition hover:text-black" href="/">Rate an order</a>
-				<a class="transition hover:text-black" href="/">Wishlist</a>
+				<a class="whitespace-nowrap transition hover:text-black" href="/">See order details</a>
+				<a class="whitespace-nowrap transition hover:text-black" href="/">Rate an order</a>
+				<a class="whitespace-nowrap transition hover:text-black" href="/">Wishlist</a>
 			</div>
 		</div>
 	</div>
