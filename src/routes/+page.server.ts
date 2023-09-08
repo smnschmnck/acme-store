@@ -5,7 +5,8 @@ const getProducts = async () => {
 	return db.query.products.findMany({
 		with: {
 			seller: true
-		}
+		},
+		limit: 10
 	});
 };
 

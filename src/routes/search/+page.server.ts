@@ -9,7 +9,8 @@ const getProducts = async (category: string, searchQuery: string) => {
 			where: like(products.name, `%${searchQuery}%`),
 			with: {
 				seller: true
-			}
+			},
+			limit: 25
 		});
 	}
 
@@ -17,7 +18,8 @@ const getProducts = async (category: string, searchQuery: string) => {
 		where: and(like(products.name, `%${searchQuery}%`), like(products.category, category)),
 		with: {
 			seller: true
-		}
+		},
+		limit: 25
 	});
 };
 
