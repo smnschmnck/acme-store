@@ -21,30 +21,21 @@
 	<div class="flex h-full w-full gap-4">
 		<div class="aspect-square h-full rounded-lg bg-zinc-300" />
 		<div class="flex h-full w-full flex-col justify-between overflow-hidden lg:w-fit">
-			<div class="flex flex-col gap-0.5 text-sm">
-				<a href={`/item/${id}`} class="line-clamp-2 text-ellipsis font-bold hover:underline"
-					>{name}</a
-				>
-				<StarRating rating={Number(rating)} />
+			<div class="flex flex-col gap-2">
+				<div class="flex flex-col gap-0.5 text-sm">
+					<a href={`/item/${id}`} class="line-clamp-2 text-ellipsis font-bold hover:underline"
+						>{name}</a
+					>
+					<StarRating rating={Number(rating)} />
+				</div>
+				<h4 class="flex text-2xl font-medium">{price}€</h4>
 			</div>
-			<h4 class="block text-sm font-bold lg:flex">{price}€</h4>
-			<div class="hidden sm:block">
-				<SellerInfo
-					id={seller.id}
-					name={seller.name}
-					rating={seller.rating}
-					ratingCount={seller.ratingCount}
-				/>
-			</div>
+			<SellerInfo
+				id={seller.id}
+				name={seller.name}
+				rating={seller.rating}
+				ratingCount={seller.ratingCount}
+			/>
 		</div>
 	</div>
-	<div class="flex sm:hidden">
-		<SellerInfo
-			id={seller.id}
-			name={seller.name}
-			rating={seller.rating}
-			ratingCount={seller.ratingCount}
-		/>
-	</div>
-	<h4 class="hidden text-sm font-bold lg:block">{price}€</h4>
 </div>
