@@ -16,14 +16,7 @@
 	</div>
 	<div class="flex w-full flex-col gap-2 bg-zinc-100 p-2">
 		{#each lastTwoViewedProducts as p}
-			<ProductListing
-				id={p.id}
-				name={p.name}
-				price={p.price}
-				category={p.category}
-				rating={p.rating}
-				seller={p.seller}
-			/>
+			<ProductListing id={p.id} name={p.name} price={p.price} rating={p.rating} seller={p.seller} />
 		{/each}
 	</div>
 </div>

@@ -22,7 +22,6 @@
 					id={p.id}
 					name={p.name}
 					price={p.price}
-					category={p.category}
 					rating={p.rating}
 					seller={p.seller}
 				/>
@@ -34,7 +33,6 @@
 					id={p.id}
 					name={p.name}
 					price={p.price}
-					category={p.category}
 					rating={p.rating}
 					seller={p.seller}
 				/>

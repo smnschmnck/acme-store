@@ -26,6 +26,7 @@ const getProducts = async (category: string, searchQuery: string) => {
 export const load: PageServerLoad = ({ url }) => {
 	const category = url.searchParams.get('category') ?? '';
 	const searchQuery = url.searchParams.get('searchQuery') ?? '';
+
 	return {
 		products: getProducts(category, searchQuery)
 	};
