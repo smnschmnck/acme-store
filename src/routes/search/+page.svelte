@@ -15,10 +15,10 @@
 
 <div>
 	<div class="flex items-center justify-between py-14">
-		<p class="flex font-medium">
+		<p class="font-medium">
 			{productsAmount} results for <b>"{data.searchData.searchQuery}"</b>
 		</p>
-		<form method="get" class="flex items-center gap-4">
+		<form method="get" class="hidden items-center gap-4 sm:flex">
 			<input type="hidden" name="category" value={data.searchData.category} />
 			<input type="hidden" name="searchQuery" value={data.searchData.searchQuery} />
 			<label class="text-sm font-medium" for="sortingSelect">Sort by: </label>
