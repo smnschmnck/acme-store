@@ -9,6 +9,8 @@
 
 	$: products = data.products;
 	$: productsAmount = products.length;
+
+	let x = JSON.stringify(sortingsWithoutConfig);
 </script>
 
 <div>
@@ -22,7 +24,12 @@
 			<label class="text-sm font-medium" for="sortingSelect">Sort by: </label>
 			<Select className="w-36" id="sortingSelect" name="sorting">
 				{#each sortingsKeys as sorting}
-					<option value={sorting} selected>{sortingsWithoutConfig[sorting].name}</option>
+					{#if sorting === data.searchData.sorting}
+						<option value={sorting} selected>{sortingsWithoutConfig[sorting].name}</option>
+					{/if}
+					{#if sorting !== data.searchData.sorting}
+						<option value={sorting}>{sortingsWithoutConfig[sorting].name}</option>
+					{/if}
 				{/each}
 			</Select>
 			<Button type="submit">Apply</Button>
