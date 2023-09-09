@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { twMerge } from 'tailwind-merge';
 	import type { Sellers } from '../../db/schema';
 	import SellerInfo from './SellerInfo.svelte';
 	import StarRating from './StarRating.svelte';
@@ -8,9 +9,15 @@
 	export let price: string;
 	export let rating: string;
 	export let seller: Sellers;
+	export let classOverrides = '';
 </script>
 
-<div class="flex h-40 w-full flex-col justify-between gap-2 bg-white p-4 sm:flex-row">
+<div
+	class={twMerge(
+		'flex h-40 w-full flex-col justify-between gap-2 bg-white p-4 sm:flex-row',
+		classOverrides
+	)}
+>
 	<div class="flex h-full w-full gap-4">
 		<div class="aspect-square h-full rounded-lg bg-zinc-300" />
 		<div class="flex h-full w-full flex-col justify-between overflow-hidden lg:w-fit">

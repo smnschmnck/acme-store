@@ -1,16 +1,45 @@
 <script lang="ts">
 	import ProductListing from '../../components/ProductListing/ProductListing.svelte';
 	import type { PageData } from './$types';
+	import Select from '../../components/ui/Select.svelte';
+	import Button from '../../components/ui/Button.svelte';
+	import { sortingsKeys, sortingsWithoutConfig } from './sortings';
 
 	export let data: PageData;
 
 	$: products = data.products;
+	$: productsAmount = products.length;
 </script>
 
 <div>
-	{#each products as p}
-		<div class="border-b border-b-zinc-300">
-			<ProductListing id={p.id} name={p.name} price={p.price} rating={p.rating} seller={p.seller} />
-		</div>
-	{/each}
+	<div class="flex items-center justify-between py-14">
+		<p class="flex font-medium">
+			{productsAmount} results for <b>"{data.searchData.searchQuery}"</b>
+		</p>
+		<form method="get" class="flex items-center gap-4">
+			<input type="hidden" name="category" value={data.searchData.category} />
+			<input type="hidden" name="searchQuery" value={data.searchData.searchQuery} />
+			<label class="text-sm font-medium" for="sortingSelect">Sort by: </label>
+			<Select className="w-36" id="sortingSelect" name="sorting">
+				{#each sortingsKeys as sorting}
+					<option value={sorting} selected>{sortingsWithoutConfig[sorting].name}</option>
+				{/each}
+			</Select>
+			<Button type="submit">Apply</Button>
+		</form>
+	</div>
+	<div class="flex flex-col gap-6">
+		{#each products as p}
+			<div class="border-b border-b-zinc-300 pb-4">
+				<ProductListing
+					classOverrides="p-0"
+					id={p.id}
+					name={p.name}
+					price={p.price}
+					rating={p.rating}
+					seller={p.seller}
+				/>
+			</div>
+		{/each}
+	</div>
 </div>

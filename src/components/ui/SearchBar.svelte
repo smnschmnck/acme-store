@@ -11,7 +11,7 @@
 
 <form method="get" action="/search" autocomplete="off" class="flex w-full gap-2 md:w-fit">
 	<div class="hidden w-48 sm:block">
-		<Select>
+		<Select name="category" id="category-select">
 			<option value="All">All</option>
 			{#each allCategories as c}
 				{#if category === c}
