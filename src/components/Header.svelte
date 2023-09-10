@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BurgerMenu from '../assets/icons/BurgerMenu.svelte';
+	import BurgerMenu from '../assets/icons/BurgerMenuIcon.svelte';
 	import ShoppingCartLink from './ShoppingCartLink.svelte';
 	import Heading from './ui/Heading.svelte';
 	import SearchBar from './ui/SearchBar.svelte';

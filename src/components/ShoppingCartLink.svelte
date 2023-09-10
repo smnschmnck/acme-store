@@ -1,5 +1,5 @@
 <script>
-	import ShoppingCart from '../assets/icons/ShoppingCart.svelte';
+	import ShoppingCart from '../assets/icons/ShoppingCartIcon.svelte';
 </script>
 
 <a

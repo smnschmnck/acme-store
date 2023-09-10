@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ArrowRight from '../assets/icons/ArrowRight.svelte';
-	import GradientFlame from '../assets/icons/GradientFlame.svelte';
+	import ArrowRight from '../assets/icons/ArrowRightIcon.svelte';
+	import GradientFlame from '../assets/icons/GradientFlameIcon.svelte';
 	import ProductListing from '../components/ProductListing/ProductListing.svelte';
 	import type { ProductListingProps } from '../components/ProductListing/types';
 	import Heading from '../components/ui/Heading.svelte';

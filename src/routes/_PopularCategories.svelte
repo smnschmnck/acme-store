@@ -1,5 +1,5 @@
 <script>
-	import GradientHeart from '../assets/icons/GradientHeart.svelte';
+	import GradientHeart from '../assets/icons/GradientHeartIcon.svelte';
 	import Heading from '../components/ui/Heading.svelte';
 </script>
 

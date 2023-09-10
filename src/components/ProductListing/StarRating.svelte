@@ -1,6 +1,6 @@
 <script lang="ts">
-	import StarFilled from '../../assets/icons/StarFilled.svelte';
-	import StarOutlined from '../../assets/icons/StarOutlined.svelte';
+	import StarFilled from '../../assets/icons/StarFilledIcon.svelte';
+	import StarOutlined from '../../assets/icons/StarOutlinedIcon.svelte';
 
 	export let rating: number;
 

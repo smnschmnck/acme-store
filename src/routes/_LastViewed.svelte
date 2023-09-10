@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GradientClock from '../assets/icons/GradientClock.svelte';
+	import GradientClock from '../assets/icons/GradientClockIcon.svelte';
 	import ProductListing from '../components/ProductListing/ProductListing.svelte';
 	import type { ProductListingProps } from '../components/ProductListing/types';
 

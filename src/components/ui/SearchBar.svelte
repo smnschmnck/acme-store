@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MagnifyingGlass from '../../assets/icons/MagnifyingGlass.svelte';
+	import MagnifyingGlass from '../../assets/icons/MagnifyingGlassIcon.svelte';
 	import Button from './Button.svelte';
 	import Input from './Input.svelte';
 	import Select from './Select.svelte';
