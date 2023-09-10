@@ -14,7 +14,7 @@
 
 <div
 	class={twMerge(
-		'flex h-40 w-full flex-col justify-between gap-2 bg-white p-4 sm:flex-row',
+		'flex h-48 w-full flex-col justify-between gap-2 bg-white p-4 sm:h-40 sm:flex-row',
 		classOverrides
 	)}
 >
