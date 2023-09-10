@@ -2,7 +2,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import type { Sellers } from '../../db/schema';
 	import SellerInfo from './SellerInfo.svelte';
-	import StarRating from './StarRating.svelte';
+	import StarRating from '../ui/StarRating.svelte';
 
 	export let id: string;
 	export let name: string;
