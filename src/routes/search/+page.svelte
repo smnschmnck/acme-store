@@ -4,6 +4,7 @@
 	import Select from '../../components/ui/Select.svelte';
 	import Button from '../../components/ui/Button.svelte';
 	import { sortingsKeys, sortingsWithoutConfig } from './sortings';
+	import Filters from '../../assets/icons/FiltersIcon.svelte';
 
 	export let data: PageData;
 
@@ -14,10 +15,13 @@
 </script>
 
 <div>
-	<div class="flex items-center justify-between py-14">
+	<div class="flex items-center justify-between py-8 sm:py-14">
 		<p class="font-medium">
 			{productsAmount} results for <b>"{data.searchData.searchQuery}"</b>
 		</p>
+		<div class="block sm:hidden">
+			<Filters />
+		</div>
 		<form method="get" class="hidden items-center gap-4 sm:flex">
 			<input type="hidden" name="category" value={data.searchData.category} />
 			<input type="hidden" name="searchQuery" value={data.searchData.searchQuery} />
