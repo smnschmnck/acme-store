@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Button from '../../../components/ui/Button.svelte';
+	import Input from '../../../components/ui/Input.svelte';
 	import RatingSelect from './_RatingSelect.svelte';
 </script>
 
-<form class="flex h-fit w-80 flex-col gap-4 rounded-xl border border-zinc-200 px-8 py-6">
+<form class="flex h-fit w-80 flex-col gap-6 rounded-xl border border-zinc-200 px-8 py-6">
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Categories</h3>
 		<details>
@@ -58,6 +59,30 @@
 		<div class="flex gap-2">
 			<RatingSelect rating={2} />
 			<RatingSelect rating={1} />
+		</div>
+	</div>
+	<div class="flex flex-col gap-2 text-sm font-medium">
+		<h3 class="text-sm font-bold">Price range</h3>
+		<div class="flex items-center gap-4">
+			<Input placeholder="Min.">
+				<span class="text-black" slot="startAdornment">$</span>
+			</Input>
+			<div class="h-0.5 w-24 bg-zinc-200" />
+			<Input placeholder="Max.">
+				<span class="text-black" slot="startAdornment">$</span>
+			</Input>
+		</div>
+	</div>
+	<div class="flex flex-col gap-2 text-sm font-medium">
+		<h3 class="text-sm font-bold">Seller rating</h3>
+		<div class="flex items-center gap-4">
+			<Input placeholder="Min.">
+				<span class="text-black" slot="endAdornment">%</span>
+			</Input>
+			<div class="h-0.5 w-24 bg-zinc-200" />
+			<Input placeholder="Max.">
+				<span class="text-black" slot="endAdornment">%</span>
+			</Input>
 		</div>
 	</div>
 	<Button className="w-full">Apply filters</Button>

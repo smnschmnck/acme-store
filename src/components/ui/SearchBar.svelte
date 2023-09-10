@@ -24,7 +24,7 @@
 		</Select>
 	</div>
 	<Input value={searchQuery} type="text" placeholder="Search products" name="searchQuery">
-		<MagnifyingGlass slot="icon" />
+		<MagnifyingGlass slot="startAdornment" />
 	</Input>
 	<Button type="submit">Search</Button>
 </form>
