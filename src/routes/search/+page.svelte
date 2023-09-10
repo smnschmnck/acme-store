@@ -12,7 +12,7 @@
 </script>
 
 <div>
-	<div class="flex items-center justify-between py-8 sm:py-14">
+	<div class="flex items-center justify-between py-6 sm:py-10">
 		<p class="font-medium">
 			{productsAmount} results for <b>"{data.searchData.searchQuery}"</b>
 		</p>
