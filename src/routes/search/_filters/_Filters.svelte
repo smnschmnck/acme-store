@@ -7,8 +7,11 @@
 <form class="flex h-fit w-80 flex-col gap-6 rounded-xl border border-zinc-200 px-8 py-6">
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Categories</h3>
-		<details>
-			<summary>Shoes</summary>
+		<details class="group">
+			<summary
+				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
+				>Shoes</summary
+			>
 			<div class="flex flex-col gap-0.5">
 				<label class="pl-4 text-zinc-500">
 					<input type="checkbox" name="category_sneakers" />
@@ -28,22 +31,31 @@
 				</label>
 			</div>
 		</details>
-		<details>
-			<summary>Jackets</summary>
+		<details class="group">
+			<summary
+				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
+				>Jackets</summary
+			>
 			<label class="pl-4 text-zinc-500">
 				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
 		</details>
-		<details>
-			<summary>Pants</summary>
+		<details class="group">
+			<summary
+				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
+				>Pants</summary
+			>
 			<label class="pl-4 text-zinc-500">
 				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
 		</details>
-		<details>
-			<summary>T-Shirts</summary>
+		<details class="group">
+			<summary
+				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
+				>T-Shirts</summary
+			>
 			<label class="pl-4 text-zinc-500">
 				<input type="checkbox" name="category_sneakers" />
 				Sneakers
