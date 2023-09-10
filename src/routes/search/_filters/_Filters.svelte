@@ -11,19 +11,19 @@
 			<summary>Shoes</summary>
 			<div class="flex flex-col gap-0.5">
 				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="" id="" />
+					<input type="checkbox" name="category_sneakers" />
 					Sneakers
 				</label>
 				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="" id="" />
+					<input type="checkbox" name="category_boots" />
 					Boots
 				</label>
 				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="" id="" />
+					<input type="checkbox" name="category_crocs" />
 					Crocs
 				</label>
 				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="" id="" />
+					<input type="checkbox" name="category_trainers" />
 					Trainers
 				</label>
 			</div>
@@ -31,21 +31,21 @@
 		<details>
 			<summary>Jackets</summary>
 			<label class="pl-4 text-zinc-500">
-				<input type="checkbox" name="" id="" />
+				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
 		</details>
 		<details>
 			<summary>Pants</summary>
 			<label class="pl-4 text-zinc-500">
-				<input type="checkbox" name="" id="" />
+				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
 		</details>
 		<details>
 			<summary>T-Shirts</summary>
 			<label class="pl-4 text-zinc-500">
-				<input type="checkbox" name="" id="" />
+				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
 		</details>
@@ -64,11 +64,11 @@
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Price range</h3>
 		<div class="flex items-center gap-4">
-			<Input placeholder="Min.">
+			<Input placeholder="Min." name="minPrice">
 				<span class="text-black" slot="startAdornment">$</span>
 			</Input>
 			<div class="h-0.5 w-24 bg-zinc-200" />
-			<Input placeholder="Max.">
+			<Input placeholder="Max." name="maxPrice">
 				<span class="text-black" slot="startAdornment">$</span>
 			</Input>
 		</div>
@@ -76,14 +76,14 @@
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Seller rating</h3>
 		<div class="flex items-center gap-4">
-			<Input placeholder="Min.">
+			<Input placeholder="Min." name="minSellerRating">
 				<span class="text-black" slot="endAdornment">%</span>
 			</Input>
 			<div class="h-0.5 w-24 bg-zinc-200" />
-			<Input placeholder="Max.">
+			<Input placeholder="Max." name="maxSellerRating">
 				<span class="text-black" slot="endAdornment">%</span>
 			</Input>
 		</div>
 	</div>
-	<Button className="w-full">Apply filters</Button>
+	<Button type="submit" className="w-full">Apply filters</Button>
 </form>
