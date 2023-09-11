@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
+	import chevronDown from '../../assets/svg/icons/chevron-down.svg';
 
 	interface $$Props extends Partial<HTMLSelectElement> {
 		className?: string;
@@ -9,6 +10,7 @@
 </script>
 
 <select
+	style="--chevron-down: url({chevronDown});"
 	class={twMerge(
 		'h-10 w-full cursor-pointer overflow-clip text-ellipsis rounded-lg bg-zinc-100 text-sm font-medium hover:bg-zinc-200 focus:outline focus:outline-2 focus:outline-blue-500',
 		className
@@ -24,7 +26,7 @@
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
-		background-image: url('/icons/chevron-down.svg');
+		background-image: var(--chevron-down);
 		background-position-x: calc(100% - 1rem); /* Adjust as needed */
 		background-position-y: center;
 		background-repeat: no-repeat;

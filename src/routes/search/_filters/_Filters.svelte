@@ -1,17 +1,16 @@
 <script lang="ts">
 	import Button from '../../../components/ui/Button.svelte';
+	import Details from '../../../components/ui/Details.svelte';
 	import Input from '../../../components/ui/Input.svelte';
+	import Summary from '../../../components/ui/Summary.svelte';
 	import RatingSelect from './_RatingSelect.svelte';
 </script>
 
 <form class="flex h-fit w-80 flex-col gap-6 rounded-xl border border-zinc-200 px-8 py-6">
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Categories</h3>
-		<details class="group">
-			<summary
-				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
-				>Shoes</summary
-			>
+		<Details>
+			<Summary>Shoes</Summary>
 			<div class="flex flex-col gap-0.5">
 				<label class="pl-4 text-zinc-500">
 					<input type="checkbox" name="category_sneakers" />
@@ -30,37 +29,28 @@
 					Trainers
 				</label>
 			</div>
-		</details>
-		<details class="group">
-			<summary
-				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
-				>Jackets</summary
-			>
+		</Details>
+		<Details>
+			<Summary>Jackets</Summary>
 			<label class="pl-4 text-zinc-500">
 				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
-		</details>
-		<details class="group">
-			<summary
-				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
-				>Pants</summary
-			>
+		</Details>
+		<Details>
+			<Summary>Pants</Summary>
 			<label class="pl-4 text-zinc-500">
 				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
-		</details>
-		<details class="group">
-			<summary
-				class="list-image-[url('/icons/chevron-down.svg')] group-open:list-image-[url('/icons/chevron-up.svg')]"
-				>T-Shirts</summary
-			>
+		</Details>
+		<Details>
+			<Summary>T-Shirts</Summary>
 			<label class="pl-4 text-zinc-500">
 				<input type="checkbox" name="category_sneakers" />
 				Sneakers
 			</label>
-		</details>
+		</Details>
 	</div>
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Product rating</h3>
