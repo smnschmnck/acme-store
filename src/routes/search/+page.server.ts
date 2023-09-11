@@ -15,7 +15,7 @@ const getProducts = async (
 	return await db.query.products.findMany({
 		where: and(
 			like(products.name, `%${searchQuery}%`),
-			hasCategory ? like(products.category, `%${searchQuery}%`) : undefined
+			hasCategory ? like(products.category, `%${category}%`) : undefined
 		),
 		with: {
 			seller: true
