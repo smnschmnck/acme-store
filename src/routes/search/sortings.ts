@@ -10,6 +10,14 @@ export const sortings = {
 		name: 'Lowest Price',
 		config: [asc(products.price)]
 	},
+	alphabeticalAZ: {
+		name: 'Alphabetical A-Z',
+		config: [asc(products.name)]
+	},
+	alphabeticalZA: {
+		name: 'Alphabetical Z-A',
+		config: [desc(products.name)]
+	},
 	popular: {
 		name: 'Popular',
 		config: []
