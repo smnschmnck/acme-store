@@ -19,7 +19,9 @@
 	)}
 >
 	<div class="flex h-full w-full gap-4">
-		<div class="aspect-square h-full rounded-lg bg-zinc-300" />
+		<div class="h-full w-fit sm:aspect-square">
+			<div class="h-full w-32 rounded-lg bg-zinc-300 sm:aspect-square sm:w-full" />
+		</div>
 		<div class="flex h-full w-full flex-col justify-between overflow-hidden lg:w-fit">
 			<div class="flex flex-col gap-2">
 				<div class="flex flex-col gap-0.5 text-sm">
