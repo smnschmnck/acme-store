@@ -7,8 +7,14 @@
 	export let className = '';
 </script>
 
-<div class="flex w-full">
-	<input type="radio" class="peer h-0 w-0 opacity-0 outline-none" {id} {name} {value} />
+<div class="flex w-full gap-0">
+	<input
+		type="radio"
+		class="peer m-0 h-0 w-0 appearance-none border-none p-0 opacity-0"
+		{id}
+		{name}
+		{value}
+	/>
 	<label
 		for={id}
 		aria-hidden="true"
