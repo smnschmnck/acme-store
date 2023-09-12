@@ -16,14 +16,18 @@
 		<p class="font-medium">
 			{productsAmount} results for <b>"{data.searchData.searchQuery}"</b>
 		</p>
-		<div class="block sm:hidden">
-			<FiltersIcon />
+		<div class="flex items-center gap-6">
+			<div class="hidden sm:block">
+				<Sortings
+					searchQuery={data.searchData.searchQuery}
+					currentSorting={data.searchData.sorting}
+					category={data.searchData.category}
+				/>
+			</div>
+			<div class="block lg:hidden">
+				<FiltersIcon />
+			</div>
 		</div>
-		<Sortings
-			searchQuery={data.searchData.searchQuery}
-			currentSorting={data.searchData.sorting}
-			category={data.searchData.category}
-		/>
 	</div>
 	<div class="flex w-full gap-8">
 		<div class="hidden lg:block">
