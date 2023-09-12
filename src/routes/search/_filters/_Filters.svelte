@@ -3,7 +3,7 @@
 	import Details from '../../../components/ui/Details.svelte';
 	import Input from '../../../components/ui/Input.svelte';
 	import Summary from '../../../components/ui/Summary.svelte';
-	import CheckSelect from './CheckSelect.svelte';
+	import LabeledCheckbox from './LabeledCheckbox.svelte';
 	import RatingSelect from './_RatingSelect.svelte';
 </script>
 
@@ -13,23 +13,23 @@
 		<Details>
 			<Summary>Shoes</Summary>
 			<div class="flex flex-col gap-0.5">
-				<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
-				<CheckSelect id="category_boots" name="category_boots">Boots</CheckSelect>
-				<CheckSelect id="category_crocs" name="category_crocs">Crocs</CheckSelect>
-				<CheckSelect id="category_trainers" name="category_trainers">Trainers</CheckSelect>
+				<LabeledCheckbox id="category_sneakers" name="category_sneakers">Sneakers</LabeledCheckbox>
+				<LabeledCheckbox id="category_boots" name="category_boots">Boots</LabeledCheckbox>
+				<LabeledCheckbox id="category_crocs" name="category_crocs">Crocs</LabeledCheckbox>
+				<LabeledCheckbox id="category_trainers" name="category_trainers">Trainers</LabeledCheckbox>
 			</div>
 		</Details>
 		<Details>
 			<Summary>Jackets</Summary>
-			<CheckSelect id="category_sneakers1" name="category_sneakers">Sneakers</CheckSelect>
+			<LabeledCheckbox id="category_sneakers1" name="category_sneakers">Sneakers</LabeledCheckbox>
 		</Details>
 		<Details>
 			<Summary>Pants</Summary>
-			<CheckSelect id="category_sneakers2" name="category_sneakers">Sneakers</CheckSelect>
+			<LabeledCheckbox id="category_sneakers2" name="category_sneakers">Sneakers</LabeledCheckbox>
 		</Details>
 		<Details>
 			<Summary>T-Shirts</Summary>
-			<CheckSelect id="category_sneakers3" name="category_sneakers">Sneakers</CheckSelect>
+			<LabeledCheckbox id="category_sneakers3" name="category_sneakers">Sneakers</LabeledCheckbox>
 		</Details>
 	</div>
 	<div class="flex flex-col gap-2 text-sm font-medium">
