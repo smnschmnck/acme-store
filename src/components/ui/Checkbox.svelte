@@ -25,10 +25,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: 2px;
+		border-radius: 4px;
 		background-color: #e0e0e0;
-		width: 12px; /* Adjust the size as needed */
-		height: 12px; /* Adjust the size as needed */
+		width: 14px; /* Adjust the size as needed */
+		height: 14px; /* Adjust the size as needed */
 	}
 
 	input[type='checkbox']:focus + label::before {
