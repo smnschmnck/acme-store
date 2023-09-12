@@ -26,7 +26,7 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 4px;
-		background-color: #e0e0e0;
+		border: 1px solid #e0e0e0;
 		width: 14px; /* Adjust the size as needed */
 		height: 14px; /* Adjust the size as needed */
 	}
@@ -37,6 +37,7 @@
 
 	/* Style the label when the checkbox is checked */
 	input[type='checkbox']:checked + label::before {
+		border-color: #0f61ff;
 		color: white; /* Optional: set a different color for the checkmark in checked state */
 		content: var(--checkmark); /* Unicode checkmark character or any other symbol you prefer */
 		background-color: #0f61ff; /* Optional: set a different background color for checked state */
