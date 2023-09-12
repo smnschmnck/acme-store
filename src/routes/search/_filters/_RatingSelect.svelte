@@ -1,14 +1,32 @@
 <script lang="ts">
 	import PlusIcon from '../../../assets/icons/PlusIcon.svelte';
+	import CustomRadionButton from '../../../components/ui/CustomRadioButton.svelte';
 	import StarRating from '../../../components/ui/StarRating.svelte';
 	export let rating: number;
 </script>
 
-<div
-	class="flex w-full cursor-pointer items-center justify-center rounded-md bg-zinc-100 py-2 hover:bg-zinc-200"
+<CustomRadionButton
+	value={String(rating)}
+	name="productRating"
+	id={`rating_${rating}`}
+	className="rounded-md"
 >
-	<StarRating {rating} />
-	<div class="text-zinc-500">
-		<PlusIcon dimensions="h-5 w-5" />
+	<div
+		slot="unchecked"
+		class="flex w-full cursor-pointer items-center justify-center rounded-md bg-zinc-100 py-2 hover:bg-zinc-200"
+	>
+		<StarRating {rating} />
+		<div class="text-zinc-500">
+			<PlusIcon dimensions="h-5 w-5" />
+		</div>
 	</div>
-</div>
+	<div
+		slot="checked"
+		class="flex w-full cursor-pointer items-center justify-center rounded-md bg-zinc-100 py-2 ring-2 ring-blue-500 hover:bg-zinc-200"
+	>
+		<StarRating {rating} />
+		<div class="text-zinc-500">
+			<PlusIcon dimensions="h-5 w-5" />
+		</div>
+	</div>
+</CustomRadionButton>
