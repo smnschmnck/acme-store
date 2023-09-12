@@ -6,7 +6,7 @@
 
 <div class="flex items-center gap-2 pl-4">
 	<Checkbox {id} {name} />
-	<label class="text-zinc-500" for={id}>
+	<label class="select-none text-zinc-500" for={id}>
 		<slot />
 	</label>
 </div>

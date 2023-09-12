@@ -7,7 +7,7 @@
 
 <div class="w-fit" style="--checkmark:url({checkbox})">
 	<input type="checkbox" {id} class="text-white" {name} />
-	<label for={id} class="w-fit text-white" />
+	<label for={id} class="w-fit" />
 </div>
 
 <style>
@@ -29,6 +29,10 @@
 		background-color: #e0e0e0;
 		width: 12px; /* Adjust the size as needed */
 		height: 12px; /* Adjust the size as needed */
+	}
+
+	input[type='checkbox']:focus + label::before {
+		outline: #0f61ff auto 5px;
 	}
 
 	/* Style the label when the checkbox is checked */
