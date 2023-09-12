@@ -25,7 +25,7 @@
 				<BurgerMenu />
 			</div>
 		</div>
-		<div class="flex w-full items-center gap-4 md:gap-12">
+		<nav class="flex w-full items-center gap-4 md:gap-12">
 			<SearchBar
 				searchQuery={searchData.searchQuery}
 				category={searchData.category}
@@ -36,7 +36,7 @@
 				<a class="whitespace-nowrap transition hover:text-black" href="/">Rate an order</a>
 				<a class="whitespace-nowrap transition hover:text-black" href="/">Wishlist</a>
 			</div>
-		</div>
+		</nav>
 	</div>
 	<div class="hidden md:block">
 		<ShoppingCartLink />
