@@ -22,15 +22,15 @@
 		</Details>
 		<Details>
 			<Summary>Jackets</Summary>
-			<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
+			<CheckSelect id="category_sneakers1" name="category_sneakers">Sneakers</CheckSelect>
 		</Details>
 		<Details>
 			<Summary>Pants</Summary>
-			<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
+			<CheckSelect id="category_sneakers2" name="category_sneakers">Sneakers</CheckSelect>
 		</Details>
 		<Details>
 			<Summary>T-Shirts</Summary>
-			<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
+			<CheckSelect id="category_sneakers3" name="category_sneakers">Sneakers</CheckSelect>
 		</Details>
 	</div>
 	<div class="flex flex-col gap-2 text-sm font-medium">
