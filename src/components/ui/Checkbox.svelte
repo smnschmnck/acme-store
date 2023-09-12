@@ -1,45 +1,19 @@
 <script lang="ts">
+	import CheckmarkIcon from '../../assets/icons/CheckmarkIcon.svelte';
+
 	export let id: string;
 	export let name: string;
-
-	import checkbox from '../../assets/svg/icons/checkmark.svg';
 </script>
 
-<div class="w-fit" style="--checkmark:url({checkbox})">
-	<input type="checkbox" {id} class="text-white" {name} />
-	<label for={id} class="w-fit" />
+<div class="flex w-fit items-center">
+	<input type="checkbox" {id} class="peer h-0 w-0 opacity-0" {name} />
+	<label
+		for={id}
+		class="flex h-[14px] w-[14px] rounded-[4px] border border-gray-300 peer-checked:hidden peer-focus:outline peer-focus:outline-blue-500"
+	/>
+	<label
+		for={id}
+		class="hidden h-[14px] w-[14px] items-center justify-center rounded-[4px] bg-blue-500 peer-checked:flex peer-focus:outline peer-focus:outline-blue-500"
+		><CheckmarkIcon dimensions="h-2 w-2" /></label
+	>
 </div>
-
-<style>
-	/* Hide the default checkbox */
-	input[type='checkbox'] {
-		position: absolute;
-		opacity: 0;
-		width: 0;
-		height: 0;
-	}
-
-	/* Style a pseudo-element to create a custom appearance */
-	input[type='checkbox'] + label::before {
-		content: '';
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 4px;
-		border: 1px solid #e0e0e0;
-		width: 14px; /* Adjust the size as needed */
-		height: 14px; /* Adjust the size as needed */
-	}
-
-	input[type='checkbox']:focus + label::before {
-		outline: #0f61ff auto 5px;
-	}
-
-	/* Style the label when the checkbox is checked */
-	input[type='checkbox']:checked + label::before {
-		border-color: #0f61ff;
-		color: white; /* Optional: set a different color for the checkmark in checked state */
-		content: var(--checkmark); /* Unicode checkmark character or any other symbol you prefer */
-		background-color: #0f61ff; /* Optional: set a different background color for checked state */
-	}
-</style>

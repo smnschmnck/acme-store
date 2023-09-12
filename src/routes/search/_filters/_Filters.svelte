@@ -3,7 +3,7 @@
 	import Details from '../../../components/ui/Details.svelte';
 	import Input from '../../../components/ui/Input.svelte';
 	import Summary from '../../../components/ui/Summary.svelte';
-	import LabeledCheckbox from './LabeledCheckbox.svelte';
+	import LabeledCheckbox from './LabelCheckbox.svelte';
 	import RatingSelect from './_RatingSelect.svelte';
 </script>
 
