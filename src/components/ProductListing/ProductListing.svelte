@@ -21,11 +21,12 @@
 >
 	<div class="flex h-full w-full gap-4">
 		<div class="h-full w-fit sm:aspect-square">
-			<div
+			<a
+				href={`/item/${id}`}
 				class="flex h-full w-32 items-center justify-center overflow-clip rounded-lg bg-zinc-100 sm:aspect-square sm:w-full"
 			>
 				<img class="scale-110" src={demoPic} alt="" />
-			</div>
+			</a>
 		</div>
 		<div class="flex h-full w-full flex-col justify-between overflow-hidden lg:w-fit">
 			<div class="flex flex-col gap-2">

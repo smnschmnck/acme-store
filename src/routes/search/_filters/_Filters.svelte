@@ -1,8 +1,10 @@
 <script lang="ts">
 	import Button from '../../../components/ui/Button.svelte';
+	import Checkbox from '../../../components/ui/Checkbox.svelte';
 	import Details from '../../../components/ui/Details.svelte';
 	import Input from '../../../components/ui/Input.svelte';
 	import Summary from '../../../components/ui/Summary.svelte';
+	import CheckSelect from './CheckSelect.svelte';
 	import RatingSelect from './_RatingSelect.svelte';
 </script>
 
@@ -12,44 +14,23 @@
 		<Details>
 			<Summary>Shoes</Summary>
 			<div class="flex flex-col gap-0.5">
-				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="category_sneakers" />
-					Sneakers
-				</label>
-				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="category_boots" />
-					Boots
-				</label>
-				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="category_crocs" />
-					Crocs
-				</label>
-				<label class="pl-4 text-zinc-500">
-					<input type="checkbox" name="category_trainers" />
-					Trainers
-				</label>
+				<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
+				<CheckSelect id="category_boots" name="category_boots">Boots</CheckSelect>
+				<CheckSelect id="category_crocs" name="category_crocs">Crocs</CheckSelect>
+				<CheckSelect id="category_trainers" name="category_trainers">Trainers</CheckSelect>
 			</div>
 		</Details>
 		<Details>
 			<Summary>Jackets</Summary>
-			<label class="pl-4 text-zinc-500">
-				<input type="checkbox" name="category_sneakers" />
-				Sneakers
-			</label>
+			<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
 		</Details>
 		<Details>
 			<Summary>Pants</Summary>
-			<label class="pl-4 text-zinc-500">
-				<input type="checkbox" name="category_sneakers" />
-				Sneakers
-			</label>
+			<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
 		</Details>
 		<Details>
 			<Summary>T-Shirts</Summary>
-			<label class="pl-4 text-zinc-500">
-				<input type="checkbox" name="category_sneakers" />
-				Sneakers
-			</label>
+			<CheckSelect id="category_sneakers" name="category_sneakers">Sneakers</CheckSelect>
 		</Details>
 	</div>
 	<div class="flex flex-col gap-2 text-sm font-medium">
