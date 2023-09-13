@@ -1,25 +1,18 @@
 <script lang="ts">
-	import StarFilled from '../../assets/icons/StarFilledIcon.svelte';
-	import StarOutlined from '../../assets/icons/StarOutlinedIcon.svelte';
+	import StarFilledIcon from '../../assets/icons/StarFilledIcon.svelte';
+	import StarOutlinedIcon from '../../assets/icons/StarOutlinedIcon.svelte';
 
 	export let rating: number;
 
-	const stars: boolean[] = Array(5).fill(false);
-
-	for (let i = 0; i < Math.round(rating); i++) {
-		if (i >= 5) break;
-
-		stars[i] = true;
-	}
+	let safeRoundedRating = Math.min(Math.round(rating), 5);
+	let remainingStars = 5 - safeRoundedRating;
 </script>
 
 <div class="flex">
-	{#each stars as filled}
-		{#if filled}
-			<StarFilled />
-		{/if}
-		{#if !filled}
-			<StarOutlined />
-		{/if}
+	{#each { length: Math.min(safeRoundedRating) } as _}
+		<StarFilledIcon />
+	{/each}
+	{#each { length: remainingStars } as _}
+		<StarOutlinedIcon />
 	{/each}
 </div>
