@@ -15,7 +15,7 @@
 	<label
 		for={id}
 		aria-hidden="true"
-		class="hidden h-[14px] w-[14px] items-center justify-center rounded-[4px] bg-blue-500 peer-checked:flex peer-focus:outline peer-focus:outline-blue-500"
+		class="hidden h-[14px] w-[14px] items-center justify-center rounded-[4px] bg-black peer-checked:flex peer-focus:outline peer-focus:outline-blue-500"
 		><CheckmarkIcon dimensions="h-2 w-2" /></label
 	>
 </div>
