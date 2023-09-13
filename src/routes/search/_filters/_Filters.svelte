@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from '../../../components/ui/Button.svelte';
 	import Details from '../../../components/ui/Details.svelte';
 	import Input from '../../../components/ui/Input.svelte';
 	import Summary from '../../../components/ui/Summary.svelte';
@@ -7,7 +6,10 @@
 	import RatingSelect from './_RatingSelect.svelte';
 </script>
 
-<form class="flex h-fit w-80 flex-col gap-6 rounded-xl border border-zinc-200 px-8 py-6">
+<div class="flex h-fit flex-col gap-6">
+	<input type="hidden" name="category" />
+	<input type="hidden" name="searchQuery" />
+	<input type="hidden" name="sorting" />
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Categories</h3>
 		<Details>
@@ -21,15 +23,15 @@
 		</Details>
 		<Details>
 			<Summary>Jackets</Summary>
-			<LabeledCheckbox id="category_sneakers1" name="category_sneakers">Sneakers</LabeledCheckbox>
+			<LabeledCheckbox id="category_sneakers1" name="category_sneakersq">Sneakers</LabeledCheckbox>
 		</Details>
 		<Details>
 			<Summary>Pants</Summary>
-			<LabeledCheckbox id="category_sneakers2" name="category_sneakers">Sneakers</LabeledCheckbox>
+			<LabeledCheckbox id="category_sneakers2" name="category_sneakers2">Sneakers</LabeledCheckbox>
 		</Details>
 		<Details>
 			<Summary>T-Shirts</Summary>
-			<LabeledCheckbox id="category_sneakers3" name="category_sneakers">Sneakers</LabeledCheckbox>
+			<LabeledCheckbox id="category_sneakers3" name="category_sneakers3">Sneakers</LabeledCheckbox>
 		</Details>
 	</div>
 	<div class="flex flex-col gap-2 text-sm font-medium">
@@ -67,5 +69,4 @@
 			</Input>
 		</div>
 	</div>
-	<Button type="submit" className="w-full">Apply filters</Button>
-</form>
+</div>

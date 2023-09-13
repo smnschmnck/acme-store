@@ -3,12 +3,13 @@
 	import type { PageData } from './$types';
 	import FiltersIcon from '../../assets/icons/FiltersIcon.svelte';
 	import Sortings from './_Sortings.svelte';
-	import Filters from './_filters/_Filters.svelte';
+	import FilterBoxDesktop from './_filters/_FilterBoxDesktop.svelte';
 
 	export let data: PageData;
 
 	$: products = data.products;
 	$: productsAmount = products.length;
+	$: searchData = data.searchData;
 </script>
 
 <div>
@@ -31,7 +32,7 @@
 	</div>
 	<div class="flex w-full gap-8">
 		<div class="hidden lg:block">
-			<Filters />
+			<FilterBoxDesktop />
 		</div>
 		<div class="flex w-full flex-col gap-6">
 			{#each products as p}

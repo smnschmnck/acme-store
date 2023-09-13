@@ -1,5 +1,5 @@
 import { asc, desc } from 'drizzle-orm';
-import { products } from '../../db/schema';
+import { products } from '../../../db/schema';
 
 export const sortings = {
 	highestPrice: {

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Select from '../../components/ui/Select.svelte';
 	import Button from '../../components/ui/Button.svelte';
-	import { sortingsKeys, sortingsWithoutConfig } from './sortings';
+	import { sortingsKeys, sortingsWithoutConfig } from './utils/sortings';
 
 	export let category: string;
 	export let searchQuery: string;
