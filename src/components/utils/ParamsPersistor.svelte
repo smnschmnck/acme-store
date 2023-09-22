@@ -2,7 +2,7 @@
 	import type { SearchParams } from '../../routes/search/types';
 
 	//TODO find out how to use proper generics
-	type T = SearchParams;
+	type T = SearchParams | string;
 	//type T = $$Generic<string>;
 	export let paramsToPersist: T[];
 	export let allParams: URLSearchParams;

@@ -3,15 +3,18 @@
 	import Button from '../../components/ui/Button.svelte';
 	import { sortingsKeys, sortingsWithoutConfig } from './utils/sortings';
 	import ParamsPersistor from '../../components/utils/ParamsPersistor.svelte';
+	import { extractSearchParams } from './utils/searchParams';
 
 	export let currentSorting: string;
 	export let searchParams: URLSearchParams;
+	const filterCategories = extractSearchParams(searchParams).rawFilterCategories;
 </script>
 
 <form method="get" class="hidden items-center gap-4 sm:flex">
 	<ParamsPersistor
 		allParams={searchParams}
 		paramsToPersist={[
+			...filterCategories,
 			'category',
 			'searchQuery',
 			'productRating',
