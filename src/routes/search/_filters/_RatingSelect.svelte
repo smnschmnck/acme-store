@@ -3,6 +3,7 @@
 	import CustomRadionButton from '../../../components/ui/CustomRadioButton.svelte';
 	import StarRating from '../../../components/ui/StarRating.svelte';
 	export let rating: number;
+	export let selected = false;
 </script>
 
 <CustomRadionButton
@@ -10,6 +11,7 @@
 	name="productRating"
 	id={`rating_${rating}`}
 	className="rounded-md"
+	{selected}
 >
 	<div
 		slot="unchecked"

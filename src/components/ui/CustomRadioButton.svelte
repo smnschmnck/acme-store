@@ -5,10 +5,12 @@
 	export let name: string;
 	export let value: string;
 	export let className = '';
+	export let selected = false;
 </script>
 
 <div class="flex w-full gap-0">
 	<input
+		checked={selected}
 		type="radio"
 		class="peer m-0 h-0 w-0 appearance-none border-none p-0 opacity-0"
 		{id}
