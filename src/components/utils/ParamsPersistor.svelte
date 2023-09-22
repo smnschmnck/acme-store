@@ -1,5 +1,10 @@
 <script lang="ts">
-	export let paramsToPersist: string[];
+	import type { SearchParams } from '../../routes/search/types';
+
+	//TODO find out how to use proper generics
+	type T = SearchParams;
+	//type T = $$Generic<string>;
+	export let paramsToPersist: T[];
 	export let allParams: URLSearchParams;
 </script>
 
