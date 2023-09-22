@@ -5,6 +5,7 @@
 	import ParamsPersistor from '../../../components/utils/ParamsPersistor.svelte';
 	import LabeledCheckbox from './LabelCheckbox.svelte';
 	import RatingSelect from './_RatingSelect.svelte';
+	import { exampleCategories } from './exampleCategories';
 
 	export let searchParams: URLSearchParams;
 
@@ -25,27 +26,19 @@
 	/>
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Categories</h3>
-		<Details>
-			<Summary>Shoes</Summary>
-			<div class="flex flex-col gap-0.5">
-				<LabeledCheckbox id="category_sneakers" name="category_sneakers">Sneakers</LabeledCheckbox>
-				<LabeledCheckbox id="category_boots" name="category_boots">Boots</LabeledCheckbox>
-				<LabeledCheckbox id="category_crocs" name="category_crocs">Crocs</LabeledCheckbox>
-				<LabeledCheckbox id="category_trainers" name="category_trainers">Trainers</LabeledCheckbox>
-			</div>
-		</Details>
-		<Details>
-			<Summary>Jackets</Summary>
-			<LabeledCheckbox id="category_sneakers1" name="category_sneakersq">Sneakers</LabeledCheckbox>
-		</Details>
-		<Details>
-			<Summary>Pants</Summary>
-			<LabeledCheckbox id="category_sneakers2" name="category_sneakers2">Sneakers</LabeledCheckbox>
-		</Details>
-		<Details>
-			<Summary>T-Shirts</Summary>
-			<LabeledCheckbox id="category_sneakers3" name="category_sneakers3">Sneakers</LabeledCheckbox>
-		</Details>
+		{#each exampleCategories as c}
+			<Details>
+				<Summary>{c.category}</Summary>
+				<div class="flex flex-col gap-0.5">
+					{#each c.subCategories as subCategory}
+						<LabeledCheckbox
+							id={`category_${c.category}_${subCategory}`}
+							name={`category_${c.category}_${subCategory}`}>{subCategory}</LabeledCheckbox
+						>
+					{/each}
+				</div>
+			</Details>
+		{/each}
 	</div>
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Product rating</h3>
