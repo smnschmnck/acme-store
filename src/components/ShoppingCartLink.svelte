@@ -3,7 +3,7 @@
 </script>
 
 <a
-	href="/shoppingCart"
+	href="/shopping-cart"
 	class="relative flex h-10 w-10 items-center justify-center rounded-lg p-2 transition hover:bg-zinc-100"
 >
 	<span
