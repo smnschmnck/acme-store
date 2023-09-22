@@ -6,8 +6,7 @@
 	import Heading from '../components/ui/Heading.svelte';
 
 	export let trendingProducts: ProductListingProps[];
-	const firstTwo = trendingProducts.slice(0, 2);
-	const secondTwo = trendingProducts.slice(2, 4);
+	const firstFour = trendingProducts.slice(0, 4);
 </script>
 
 <div class="flex flex-col gap-6 pt-10">
@@ -16,19 +15,8 @@
 		<Heading>Trending products</Heading>
 	</div>
 	<div class="flex flex-col gap-2 bg-zinc-100 p-2 lg:flex-row">
-		<div class="flex w-full flex-col gap-2">
-			{#each firstTwo as p}
-				<ProductListing
-					id={p.id}
-					name={p.name}
-					price={p.price}
-					rating={p.rating}
-					seller={p.seller}
-				/>
-			{/each}
-		</div>
-		<div class="flex w-full flex-col gap-2">
-			{#each secondTwo as p}
+		<div class="grid w-full grid-cols-2 grid-rows-2 gap-2">
+			{#each firstFour as p}
 				<ProductListing
 					id={p.id}
 					name={p.name}

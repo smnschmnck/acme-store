@@ -36,11 +36,9 @@
 	</div>
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Product rating</h3>
-		<div class="flex gap-2">
+		<div class="grid grid-cols-2 grid-rows-2 gap-2">
 			<RatingSelect rating={4} />
 			<RatingSelect rating={3} />
-		</div>
-		<div class="flex gap-2">
 			<RatingSelect rating={2} />
 			<RatingSelect rating={1} />
 		</div>
