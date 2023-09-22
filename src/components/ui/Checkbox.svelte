@@ -3,10 +3,11 @@
 
 	export let id: string;
 	export let name: string;
+	export let checked = false;
 </script>
 
 <div class="flex w-fit items-center">
-	<input type="checkbox" {id} class="peer h-0 w-0 opacity-0" {name} />
+	<input type="checkbox" {id} class="peer h-0 w-0 opacity-0" {name} {checked} />
 	<label
 		for={id}
 		aria-hidden="true"

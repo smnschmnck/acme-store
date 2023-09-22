@@ -3,20 +3,31 @@
 	import Input from '../../../components/ui/Input.svelte';
 	import Summary from '../../../components/ui/Summary.svelte';
 	import ParamsPersistor from '../../../components/utils/ParamsPersistor.svelte';
+	import { extractSearchParams } from '../utils/searchParams';
 	import LabeledCheckbox from './LabelCheckbox.svelte';
 	import RatingSelect from './_RatingSelect.svelte';
 	import { exampleCategories } from './exampleCategories';
 
 	export let searchParams: URLSearchParams;
+	let extractedParams = extractSearchParams(searchParams);
 
 	const getProductRating = () => {
-		const productRatingString = searchParams.get('productRating');
-		if (productRatingString) {
-			return Number(productRatingString);
+		if (extractedParams.productRating) {
+			return Number(extractedParams.productRating);
 		}
 	};
-
 	let productRating = getProductRating();
+
+	const isSubCategorySelected = (category: string, subCategory: string) => {
+		const categoryParam = searchParams.get(`category_${category}_${subCategory}`);
+		return categoryParam === 'on';
+	};
+
+	const isCategorySelected = (category: string) => {
+		return extractedParams.rawFilterCategories
+			.map((c) => c.replace('category_', '').split('_')[0])
+			.includes(category);
+	};
 </script>
 
 <div class="flex h-fit flex-col gap-6">
@@ -27,11 +38,12 @@
 	<div class="flex flex-col gap-2 text-sm font-medium">
 		<h3 class="text-sm font-bold">Categories</h3>
 		{#each exampleCategories as c}
-			<Details>
+			<Details open={isCategorySelected(c.category)}>
 				<Summary>{c.category}</Summary>
 				<div class="flex flex-col gap-0.5">
 					{#each c.subCategories as subCategory}
 						<LabeledCheckbox
+							checked={isSubCategorySelected(c.category, subCategory)}
 							id={`category_${c.category}_${subCategory}`}
 							name={`category_${c.category}_${subCategory}`}>{subCategory}</LabeledCheckbox
 						>
@@ -44,11 +56,7 @@
 		<h3 class="text-sm font-bold">Product rating</h3>
 		<div class="grid grid-cols-2 grid-rows-2 gap-2">
 			{#each { length: 4 } as _, i}
-				{#if productRating === 4 - i}
-					<RatingSelect rating={4 - i} selected />
-				{:else}
-					<RatingSelect rating={4 - i} />
-				{/if}
+				<RatingSelect rating={4 - i} selected={productRating === 4 - i} />
 			{/each}
 		</div>
 	</div>

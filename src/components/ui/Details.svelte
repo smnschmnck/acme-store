@@ -6,6 +6,6 @@
 	export let className = '';
 </script>
 
-<details class={className}>
+<details class={className} {...$$restProps}>
 	<slot />
 </details>
