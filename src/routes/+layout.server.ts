@@ -5,7 +5,7 @@ import type { LayoutServerLoad } from './$types';
 
 export const prerender = false;
 export const ssr = true;
-export const csr = false;
+export const csr = dev;
 
 const getProductCategories = async () => {
 	return db.selectDistinct({ category: products.category }).from(products);
