@@ -21,11 +21,7 @@
 		</p>
 		<div class="flex items-center gap-6">
 			<div class="hidden sm:block">
-				<Sortings
-					searchQuery={searchData.searchQuery}
-					currentSorting={searchData.sorting}
-					category={searchData.category}
-				/>
+				<Sortings {searchParams} currentSorting={searchData.sorting} />
 			</div>
 			<div class="block lg:hidden">
 				<FiltersIcon />
