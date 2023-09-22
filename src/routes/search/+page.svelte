@@ -4,12 +4,14 @@
 	import FiltersIcon from '../../assets/icons/FiltersIcon.svelte';
 	import Sortings from './_Sortings.svelte';
 	import FilterBoxDesktop from './_filters/_FilterBoxDesktop.svelte';
+	import { page } from '$app/stores';
 
 	export let data: PageData;
 
 	$: products = data.products;
 	$: productsAmount = products.length;
 	$: searchData = data.searchData;
+	$: searchParams = $page.url.searchParams;
 </script>
 
 <div>
@@ -20,9 +22,9 @@
 		<div class="flex items-center gap-6">
 			<div class="hidden sm:block">
 				<Sortings
-					searchQuery={data.searchData.searchQuery}
-					currentSorting={data.searchData.sorting}
-					category={data.searchData.category}
+					searchQuery={searchData.searchQuery}
+					currentSorting={searchData.sorting}
+					category={searchData.category}
 				/>
 			</div>
 			<div class="block lg:hidden">
@@ -32,7 +34,7 @@
 	</div>
 	<div class="flex w-full gap-8">
 		<div class="hidden lg:block">
-			<FilterBoxDesktop />
+			<FilterBoxDesktop {searchParams} />
 		</div>
 		<div class="flex w-full flex-col gap-6">
 			{#each products as p}
