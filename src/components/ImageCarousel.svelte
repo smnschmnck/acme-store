@@ -4,9 +4,9 @@
 	let safeImages = images.slice(0, 10);
 </script>
 
-<div class="flex max-w-fit flex-col gap-8">
+<div class="flex max-w-fit flex-col gap-4">
 	<div
-		class="flex aspect-square max-h-[24rem] min-h-[24rem] min-w-[24rem] max-w-[24rem] bg-zinc-100"
+		class="flex aspect-square min-w-full max-w-full bg-zinc-100 lg:max-h-[24rem] lg:min-h-[24rem] lg:min-w-[24rem] lg:max-w-[24rem]"
 	>
 		<div
 			class="flex snap-x snap-mandatory scroll-m-4 overflow-hidden overflow-x-auto scroll-smooth"
@@ -19,7 +19,7 @@
 		</div>
 	</div>
 
-	<div class="flex max-w-[24rem] flex-wrap gap-4">
+	<div class="flex flex-wrap gap-2 lg:max-w-[24rem] lg:gap-4">
 		{#each safeImages as preview, i}
 			<a
 				href={`#image-${i}`}
