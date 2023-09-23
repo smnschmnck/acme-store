@@ -12,7 +12,7 @@
 <select
 	style="--chevron-down: url({chevronDown});"
 	class={twMerge(
-		'h-10 w-full cursor-pointer overflow-clip text-ellipsis rounded-lg bg-zinc-100 text-sm font-medium hover:bg-zinc-200 focus:outline focus:outline-2 focus:outline-blue-500',
+		'h-10 w-full cursor-pointer overflow-clip text-ellipsis rounded-lg bg-zinc-100 text-sm font-medium transition hover:bg-zinc-200 focus:outline focus:outline-2 focus:outline-blue-500',
 		className
 	)}
 	{...$$restProps}

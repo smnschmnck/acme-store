@@ -23,7 +23,7 @@
 		{#each safeImages as preview, i}
 			<a
 				href={`#image-${i}`}
-				class="flex aspect-square w-16 items-center justify-center overflow-hidden bg-zinc-100"
+				class="flex aspect-square w-16 items-center justify-center overflow-hidden bg-zinc-100 transition-all hover:scale-110"
 			>
 				<img src={preview.src} alt={preview.alt} />
 			</a>

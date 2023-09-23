@@ -15,7 +15,7 @@
 >
 	<div
 		slot="unchecked"
-		class="flex w-full cursor-pointer items-center justify-center rounded-md bg-zinc-100 py-2 hover:bg-zinc-200"
+		class="flex w-full cursor-pointer items-center justify-center rounded-md bg-zinc-100 py-2 transition hover:bg-zinc-200"
 	>
 		<StarRating {rating} />
 		<div class="text-zinc-500">
@@ -24,7 +24,7 @@
 	</div>
 	<div
 		slot="checked"
-		class="flex w-full cursor-pointer items-center justify-center rounded-md bg-zinc-100 py-2 ring-1 ring-black hover:bg-zinc-200"
+		class="flex w-full cursor-pointer items-center justify-center rounded-md bg-zinc-100 py-2 ring-1 ring-black transition hover:bg-zinc-200"
 	>
 		<StarRating {rating} />
 		<div class="text-zinc-500">
