@@ -8,7 +8,7 @@
 	let remainingStars = 5 - safeRoundedRating;
 </script>
 
-<div class="flex">
+<div class="flex text-black">
 	{#each { length: Math.min(safeRoundedRating) } as _}
 		<StarFilledIcon />
 	{/each}
