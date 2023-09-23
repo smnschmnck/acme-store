@@ -14,6 +14,10 @@
 	const exampleImages = [
 		{ src: exampleTShirt, alt: 't-shirt' },
 		{ src: exampleTShirt, alt: 't-shirt' },
+		{ src: exampleTShirt, alt: 't-shirt' },
+		{ src: exampleTShirt, alt: 't-shirt' },
+		{ src: exampleTShirt, alt: 't-shirt' },
+		{ src: exampleTShirt, alt: 't-shirt' },
 		{ src: exampleTShirt, alt: 't-shirt' }
 	];
 </script>
