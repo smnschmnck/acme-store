@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ImageCarousel from '../../../components/ImageCarousel.svelte';
 	import SellerInfo from '../../../components/ProductListing/SellerInfo.svelte';
 	import Button from '../../../components/ui/Button.svelte';
 	import Input from '../../../components/ui/Input.svelte';
@@ -9,14 +10,18 @@
 
 	export let data: PageData;
 	const { product } = data;
+
+	const exampleImages = [
+		{ src: exampleTShirt, alt: 't-shirt' },
+		{ src: exampleTShirt, alt: 't-shirt' },
+		{ src: exampleTShirt, alt: 't-shirt' }
+	];
 </script>
 
 <div class="py-10">
 	{#if product}
-		<div class="flex gap-8">
-			<div class="flex aspect-square h-96 items-center justify-center bg-zinc-100 p-12">
-				<img src={exampleTShirt} alt={product.name} />
-			</div>
+		<div class="flex flex-col gap-8 md:flex-row">
+			<ImageCarousel images={exampleImages} />
 			<div class="flex w-full flex-col gap-10">
 				<div class="flex w-full justify-between border-b border-b-zinc-200 pb-10 text-sm">
 					<div class="flex flex-col gap-6">
