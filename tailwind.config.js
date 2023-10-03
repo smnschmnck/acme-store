@@ -8,6 +8,9 @@ export default {
 			},
 			screens: {
 				'2xl': '1340px'
+			},
+			boxShadow: {
+				up: '0 -4px 8px -1px rgb(0 0 0 / 0.02), 0 -2px 6px -2px rgb(0 0 0 / 0.02)'
 			}
 		}
 	},

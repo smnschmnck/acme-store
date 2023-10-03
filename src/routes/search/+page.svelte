@@ -1,10 +1,10 @@
 <script lang="ts">
 	import ProductListing from '../../components/ProductListing/ProductListing.svelte';
 	import type { PageData } from './$types';
-	import FiltersIcon from '../../assets/icons/FiltersIcon.svelte';
 	import Sortings from './_Sortings.svelte';
 	import FilterBoxDesktop from './_filters/_FilterBoxDesktop.svelte';
 	import { page } from '$app/stores';
+	import FilterBoxMobile from './_filters/_FilterBoxMobile.svelte';
 
 	export let data: PageData;
 
@@ -24,7 +24,7 @@
 				<Sortings {searchParams} currentSorting={searchData.sorting} />
 			</div>
 			<div class="block lg:hidden">
-				<FiltersIcon />
+				<FilterBoxMobile {searchParams} />
 			</div>
 		</div>
 	</div>
