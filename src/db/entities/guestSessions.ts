@@ -1,12 +1,12 @@
-import { relations, type InferSelectModel } from 'drizzle-orm';
-import { mysqlTable, primaryKey, char, varchar } from 'drizzle-orm/mysql-core';
-import { products } from './products';
+import { type InferSelectModel, relations } from 'drizzle-orm';
+import { mysqlTable, primaryKey, char } from 'drizzle-orm/mysql-core';
+import { productsToShoppingCarts } from './productsToShoppingCarts';
 
 export const guestSessions = mysqlTable(
 	'guest_sessions',
 	{
 		id: char('id', { length: 36 }).notNull().primaryKey(),
-		shoppingCart: varchar('shoppingCart', { length: 36 }).notNull()
+		shoppingCart: char('shopping_cart', { length: 36 }).notNull()
 	},
 	(table) => {
 		return {
@@ -16,6 +16,6 @@ export const guestSessions = mysqlTable(
 );
 export type GuestSessions = InferSelectModel<typeof guestSessions>;
 
-export const shoppingCartProducts = relations(guestSessions, ({ many }) => ({
-	products: many(products)
+export const guestSessionsRelations = relations(guestSessions, ({ many }) => ({
+	productsToShoppingCart: many(productsToShoppingCarts)
 }));

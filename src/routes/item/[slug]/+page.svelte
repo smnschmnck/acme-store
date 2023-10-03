@@ -9,7 +9,7 @@
 	import exampleTShirt from './t-shirt-1.avif';
 
 	export let data: PageData;
-	const { product } = data;
+	const { product, addedToCart } = data;
 
 	const exampleImages = [
 		{ src: exampleTShirt, alt: 't-shirt' },
@@ -23,6 +23,9 @@
 </script>
 
 <div class="py-10">
+	{#if addedToCart === 'success'}
+		<h1>Product added to cart</h1>
+	{/if}
 	{#if product}
 		<div class="flex flex-col gap-8 md:flex-row">
 			<div class="hidden md:block">
@@ -49,12 +52,19 @@
 					<ImageCarousel imageIdPrefix={'imgM'} images={exampleImages} />
 				</div>
 				<p class="block text-xl font-bold md:hidden">{product.price}€</p>
-				<div class="flex w-full gap-4">
+				<form method="post" class="flex w-full gap-4">
 					<div class="w-48">
-						<Input placeholder="Amount" value="1" className="text-center" type="number" />
+						<Input
+							placeholder="Amount"
+							name="amount"
+							value="1"
+							className="text-center"
+							type="number"
+						/>
+						<input type="hidden" name="productId" value={product.id} />
 					</div>
-					<Button className="w-full">Add to cart</Button>
-				</div>
+					<Button type="submit" className="w-full">Add to cart</Button>
+				</form>
 			</div>
 		</div>
 	{/if}

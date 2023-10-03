@@ -1,7 +1,7 @@
 import { relations, type InferSelectModel } from 'drizzle-orm';
 import { mysqlTable, primaryKey, char, varchar, decimal, int } from 'drizzle-orm/mysql-core';
 import { sellers } from './sellers';
-import { guestSessions } from './guestSessions';
+import { productsToShoppingCarts } from './productsToShoppingCarts';
 
 export const products = mysqlTable(
 	'products',
@@ -23,10 +23,7 @@ export const products = mysqlTable(
 );
 export type Products = InferSelectModel<typeof products>;
 
-export const productsRelations = relations(products, ({ one }) => ({
+export const productsRelations = relations(products, ({ one, many }) => ({
 	seller: one(sellers, { fields: [products.sellerId], references: [sellers.id] }),
-	shoppingCart: one(guestSessions, {
-		fields: [products.id],
-		references: [guestSessions.shoppingCart]
-	})
+	productsToShoppingCart: many(productsToShoppingCarts)
 }));
