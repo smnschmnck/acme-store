@@ -17,6 +17,10 @@
 </summary>
 
 <style>
+	summary {
+		appearance: none;
+	}
+
 	:global([open] > summary) {
 		list-style-image: var(--chevron-up);
 	}
