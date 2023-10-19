@@ -8,7 +8,7 @@ const getProducts = async (shoppingCartId: string) => {
 		with: { products: true }
 	});
 
-	return rows.map((q) => q.products);
+	return rows.map((row) => row.products);
 };
 
 export const load: PageServerLoad = async ({ cookies }) => {
