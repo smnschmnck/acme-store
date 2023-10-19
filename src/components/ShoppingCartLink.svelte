@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
 	import ShoppingCart from '../assets/icons/ShoppingCartIcon.svelte';
+
+	export let productCount: number;
 </script>
 
 <a
@@ -8,7 +10,7 @@
 >
 	<span
 		class="absolute right-0 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-medium text-white"
-		>2</span
+		>{productCount}</span
 	>
 	<ShoppingCart />
 </a>

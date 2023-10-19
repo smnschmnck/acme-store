@@ -9,6 +9,7 @@
 		category: string;
 		allCategories: string[];
 	};
+	export let shoppingCartProductCount: number;
 </script>
 
 <header
@@ -21,7 +22,7 @@
 				<Heading className="font-normal">store</Heading>
 			</a>
 			<div class="flex items-center gap-4 md:hidden">
-				<ShoppingCartLink />
+				<ShoppingCartLink productCount={shoppingCartProductCount} />
 				<BurgerMenu />
 			</div>
 		</div>
@@ -39,7 +40,7 @@
 		</nav>
 	</div>
 	<div class="hidden md:block">
-		<ShoppingCartLink />
+		<ShoppingCartLink productCount={shoppingCartProductCount} />
 	</div>
 	<div class="hidden md:block xl:hidden">
 		<BurgerMenu />
