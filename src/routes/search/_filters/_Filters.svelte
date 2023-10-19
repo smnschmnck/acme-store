@@ -8,6 +8,8 @@
 	import RatingSelect from './_RatingSelect.svelte';
 	import { exampleCategories } from './exampleCategories';
 
+	export let platformPrefix: 'd' | 'm';
+
 	export let searchParams: URLSearchParams;
 	let extractedParams = extractSearchParams(searchParams);
 
@@ -44,7 +46,7 @@
 					{#each c.subCategories as subCategory}
 						<LabeledCheckbox
 							checked={isSubCategorySelected(c.category, subCategory)}
-							id={`category_${c.category}_${subCategory}`}
+							id={`${platformPrefix}_category_${c.category}_${subCategory}`}
 							name={`category_${c.category}_${subCategory}`}>{subCategory}</LabeledCheckbox
 						>
 					{/each}

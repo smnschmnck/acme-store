@@ -35,7 +35,7 @@
 				</label>
 			</div>
 			<div class="h-full overflow-y-scroll p-1">
-				<Filters {searchParams} />
+				<Filters {searchParams} platformPrefix="m" />
 			</div>
 			<div class="min-h-fit p-1">
 				<Button type="submit" className="w-full">Apply filters</Button>
