@@ -15,11 +15,11 @@ export const productsToShoppingCarts = mysqlTable(
 );
 
 export const usersToGroupsRelations = relations(productsToShoppingCarts, ({ one }) => ({
-	group: one(guestSessions, {
+	sessions: one(guestSessions, {
 		fields: [productsToShoppingCarts.shoppingCartId],
 		references: [guestSessions.shoppingCart]
 	}),
-	user: one(products, {
+	products: one(products, {
 		fields: [productsToShoppingCarts.productId],
 		references: [products.id]
 	})

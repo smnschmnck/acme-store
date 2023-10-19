@@ -1,8 +1,9 @@
-import { redirect, type Cookies } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import { db } from '../../../db/connection';
 import type { Actions, PageServerLoad } from './$types';
-import { guestSessions, productsToShoppingCarts } from '../../../db/schema';
+import { productsToShoppingCarts } from '../../../db/schema';
 import { z } from 'zod';
+import { getSession, getSessionId } from '$lib';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	const addedToCart = url.searchParams.get('addedToCart') as 'success' | 'failure' | undefined;
@@ -15,27 +16,6 @@ export const load: PageServerLoad = async ({ params, url }) => {
 			}
 		})
 	};
-};
-
-const getSessionId = async (cookies: Cookies) => {
-	const sessionId = cookies.get('SESSION');
-	if (sessionId) {
-		return sessionId;
-	}
-	const newSessionId = crypto.randomUUID();
-	await db.insert(guestSessions).values({
-		id: newSessionId,
-		shoppingCart: crypto.randomUUID()
-	});
-	cookies.set('SESSION', newSessionId);
-
-	return newSessionId;
-};
-
-const getSession = async (sessionId: string) => {
-	return await db.query.guestSessions.findFirst({
-		where: (sessions, { eq }) => eq(sessions.id, sessionId)
-	});
 };
 
 export const actions = {
@@ -55,7 +35,7 @@ export const actions = {
 		try {
 			const sessionId = await getSessionId(cookies);
 			const session = await getSession(sessionId);
-			if (!session) throw new Error('Unauthorized');
+			if (!session) throw new Error('no session');
 
 			await db.insert(productsToShoppingCarts).values({
 				productId: validation.data.productId,
