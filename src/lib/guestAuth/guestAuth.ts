@@ -2,7 +2,7 @@ import type { Cookies } from '@sveltejs/kit';
 import { guestSessions } from '../../db/schema';
 import { db } from '../../db/connection';
 
-export const getSessionId = async (cookies: Cookies) => {
+const getSessionId = async (cookies: Cookies) => {
 	const sessionId = cookies.get('SESSION');
 	if (sessionId) {
 		return sessionId;
@@ -12,12 +12,15 @@ export const getSessionId = async (cookies: Cookies) => {
 		id: newSessionId,
 		shoppingCart: crypto.randomUUID()
 	});
-	cookies.set('SESSION', newSessionId);
+	cookies.set('SESSION', newSessionId, {
+		path: '/'
+	});
 
 	return newSessionId;
 };
 
-export const getSession = async (sessionId: string) => {
+export const getSession = async (cookies: Cookies) => {
+	const sessionId = await getSessionId(cookies);
 	return await db.query.guestSessions.findFirst({
 		where: (sessions, { eq }) => eq(sessions.id, sessionId)
 	});

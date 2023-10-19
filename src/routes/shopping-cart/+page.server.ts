@@ -1,4 +1,4 @@
-import { getSession, getSessionId } from '$lib';
+import { getSession } from '$lib';
 import type { PageServerLoad } from '../$types';
 import { db } from '../../db/connection';
 
@@ -12,8 +12,7 @@ const getProducts = async (shoppingCartId: string) => {
 };
 
 export const load: PageServerLoad = async ({ cookies }) => {
-	const sessionId = await getSessionId(cookies);
-	const session = await getSession(sessionId);
+	const session = await getSession(cookies);
 	if (!session) {
 		return {
 			products: []

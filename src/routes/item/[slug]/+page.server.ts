@@ -3,7 +3,7 @@ import { db } from '../../../db/connection';
 import type { Actions, PageServerLoad } from './$types';
 import { productsToShoppingCarts } from '../../../db/schema';
 import { z } from 'zod';
-import { getSession, getSessionId } from '$lib';
+import { getSession } from '$lib';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	const addedToCart = url.searchParams.get('addedToCart') as 'success' | 'failure' | undefined;
@@ -33,8 +33,7 @@ export const actions = {
 		}
 
 		try {
-			const sessionId = await getSessionId(cookies);
-			const session = await getSession(sessionId);
+			const session = await getSession(cookies);
 			if (!session) throw new Error('no session');
 
 			await db.insert(productsToShoppingCarts).values({
