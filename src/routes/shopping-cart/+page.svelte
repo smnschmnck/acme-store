@@ -26,7 +26,13 @@
 						rating={product.rating}
 						seller={product.seller}
 					/>
-					<span>Amount {product.amount}</span>
+					<div class="flex flex-col gap-4">
+						<span>Amount {product.amount}</span>
+						<form action="?/deleteProduct" method="post">
+							<input type="hidden" name="productId" value={product.id} />
+							<Button className="text-white bg-red-500">Delete</Button>
+						</form>
+					</div>
 				</li>
 			{/each}
 		</ul>
