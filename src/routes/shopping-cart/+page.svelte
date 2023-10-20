@@ -26,6 +26,7 @@
 						rating={product.rating}
 						seller={product.seller}
 					/>
+					<span>Amount {product.amount}</span>
 				</li>
 			{/each}
 		</ul>

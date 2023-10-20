@@ -14,7 +14,7 @@ const getProducts = async (shoppingCartId: string) => {
 		}
 	});
 
-	return rows.map((row) => row.products);
+	return rows.map((row) => ({ ...row.products, amount: row.amount }));
 };
 
 export const load: PageServerLoad = async ({ cookies }) => {

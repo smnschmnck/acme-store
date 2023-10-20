@@ -1,5 +1,5 @@
 import { relations } from 'drizzle-orm';
-import { char, mysqlTable, primaryKey } from 'drizzle-orm/mysql-core';
+import { char, int, mysqlTable, primaryKey } from 'drizzle-orm/mysql-core';
 import { guestSessions } from './guestSessions';
 import { products } from './products';
 
@@ -7,7 +7,8 @@ export const productsToShoppingCarts = mysqlTable(
 	'products_to_shopping_carts',
 	{
 		productId: char('product_id', { length: 36 }).notNull(),
-		shoppingCartId: char('shopping_cart_id', { length: 36 }).notNull()
+		shoppingCartId: char('shopping_cart_id', { length: 36 }).notNull(),
+		amount: int('amount').notNull().default(1)
 	},
 	(t) => ({
 		pk: primaryKey(t.productId, t.shoppingCartId)
