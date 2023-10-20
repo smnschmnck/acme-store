@@ -3,7 +3,8 @@ import { guestSessions } from '../../db/schema';
 import { db } from '../../db/connection';
 
 const getSessionId = async (cookies: Cookies) => {
-	const sessionId = cookies.get('SESSION');
+	const sessionCookieName = 'GUEST_SESSION';
+	const sessionId = cookies.get(sessionCookieName);
 	if (sessionId) {
 		return sessionId;
 	}
@@ -12,7 +13,7 @@ const getSessionId = async (cookies: Cookies) => {
 		id: newSessionId,
 		shoppingCart: crypto.randomUUID()
 	});
-	cookies.set('SESSION', newSessionId, {
+	cookies.set(sessionCookieName, newSessionId, {
 		path: '/',
 		maxAge: 2147483647
 	});

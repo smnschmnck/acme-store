@@ -5,7 +5,13 @@ import { db } from '../../db/connection';
 const getProducts = async (shoppingCartId: string) => {
 	const rows = await db.query.productsToShoppingCarts.findMany({
 		where: (t, { eq }) => eq(t.shoppingCartId, shoppingCartId),
-		with: { products: true }
+		with: {
+			products: {
+				with: {
+					seller: true
+				}
+			}
+		}
 	});
 
 	return rows.map((row) => row.products);
