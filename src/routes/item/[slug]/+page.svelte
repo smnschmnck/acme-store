@@ -2,14 +2,18 @@
 	import ImageCarousel from '../../../components/ImageCarousel.svelte';
 	import SellerInfo from '../../../components/ProductListing/SellerInfo.svelte';
 	import Button from '../../../components/ui/Button.svelte';
+	import Link from '../../../components/ui/Link.svelte';
+	import LinkSecondary from '../../../components/ui/LinkSecondary.svelte';
 	import Input from '../../../components/ui/Input.svelte';
 	import StarRating from '../../../components/ui/StarRating.svelte';
 	import type { PageData } from './$types';
+	import { page } from '$app/stores';
 
 	import exampleTShirt from './t-shirt-1.avif';
 
 	export let data: PageData;
-	const { product, addedToCart } = data;
+	const { product } = data;
+	$: addedToCart = data.addedToCart;
 
 	const exampleImages = [
 		{ src: exampleTShirt, alt: 't-shirt' },
@@ -24,7 +28,20 @@
 
 <div class="py-10">
 	{#if addedToCart === 'success'}
-		<h1>Product added to cart</h1>
+		<div
+			class="absolute right-0 top-0 flex h-full w-full items-center justify-center bg-white/50 backdrop-blur-[2px]"
+		>
+			<div class="flex flex-col gap-6 rounded-xl border border-zinc-200 bg-white px-20 py-16">
+				<div>
+					<h1 class="text-2xl font-medium">Successfully added product to cart</h1>
+					<p class="text-zinc-500">{product?.name} successfully added to your cart</p>
+				</div>
+				<div class="flex w-full justify-center gap-4">
+					<LinkSecondary href={$page.url.pathname} className="flex-1">Keep shopping</LinkSecondary>
+					<Link className="flex-1" href="/shopping-cart">Go to cart</Link>
+				</div>
+			</div>
+		</div>
 	{/if}
 	{#if product}
 		<div class="flex flex-col gap-8 md:flex-row">
