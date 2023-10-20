@@ -13,7 +13,8 @@ const getSessionId = async (cookies: Cookies) => {
 		shoppingCart: crypto.randomUUID()
 	});
 	cookies.set('SESSION', newSessionId, {
-		path: '/'
+		path: '/',
+		maxAge: 2147483647
 	});
 
 	return newSessionId;
