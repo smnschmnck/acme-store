@@ -49,6 +49,35 @@ export const actions = {
 			);
 
 		throw redirect(302, url.pathname);
+	},
+	updateAmount: async ({ request, url, cookies }) => {
+		const session = await getSession(cookies);
+		if (!session) {
+			return;
+		}
+
+		const formData = await request.formData();
+		const formDataObj = Object.fromEntries(formData.entries());
+		const schema = z.object({
+			productId: z.string().uuid(),
+			amount: z.string().min(1).max(2)
+		});
+		const validated = schema.safeParse(formDataObj);
+		if (!validated.success) {
+			return;
+		}
+
+		await db
+			.update(productsToShoppingCarts)
+			.set({ amount: Number(validated.data.amount) })
+			.where(
+				and(
+					eq(productsToShoppingCarts.shoppingCartId, session.shoppingCart),
+					eq(productsToShoppingCarts.productId, validated.data.productId)
+				)
+			);
+
+		throw redirect(302, url.pathname);
 	}
 } satisfies Actions;
 

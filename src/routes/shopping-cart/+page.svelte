@@ -1,7 +1,9 @@
 <script lang="ts">
 	import ProductListing from '../../components/ProductListing/ProductListing.svelte';
 	import Button from '../../components/ui/Button.svelte';
+	import ButtonGhost from '../../components/ui/ButtonGhost.svelte';
 	import Heading from '../../components/ui/Heading.svelte';
+	import Input from '../../components/ui/Input.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -17,7 +19,7 @@
 	{#if products.length > 0}
 		<ul class="flex flex-col gap-4">
 			{#each products as product}
-				<li class="flex w-full border-b border-b-zinc-200 pb-4">
+				<li class="flex w-full justify-between border-b border-b-zinc-200 pb-4">
 					<ProductListing
 						classOverrides="p-0"
 						id={product.id}
@@ -26,11 +28,19 @@
 						rating={product.rating}
 						seller={product.seller}
 					/>
-					<div class="flex flex-col gap-4">
-						<span>Amount {product.amount}</span>
+					<div class="flex w-full flex-col items-end gap-8">
+						<form class="flex gap-4" action="?/updateAmount" method="post">
+							<input type="hidden" name="productId" value={product.id} />
+							<div class="w-32">
+								<Input name="amount" type="number" value={String(product.amount)} />
+							</div>
+							<Button type="submit">Update amount</Button>
+						</form>
 						<form action="?/deleteProduct" method="post">
 							<input type="hidden" name="productId" value={product.id} />
-							<Button className="text-white bg-red-500">Delete</Button>
+							<ButtonGhost type="submit" className="text-red-500 hover:text-red-700"
+								>Delete</ButtonGhost
+							>
 						</form>
 					</div>
 				</li>
