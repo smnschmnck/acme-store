@@ -28,20 +28,23 @@
 
 <div class="py-10">
 	{#if addedToCart === 'success'}
-		<div
-			class="absolute right-0 top-0 flex h-full w-full items-center justify-center bg-white/50 backdrop-blur-[2px]"
-		>
-			<div class="flex flex-col gap-6 rounded-xl border border-zinc-200 bg-white px-20 py-16">
-				<div>
-					<h1 class="text-2xl font-medium">Successfully added product to cart</h1>
-					<p class="text-zinc-500">{product?.name} successfully added to your cart</p>
-				</div>
-				<div class="flex w-full justify-center gap-4">
-					<LinkSecondary href={$page.url.pathname} className="flex-1">Keep shopping</LinkSecondary>
-					<Link className="flex-1" href="/shopping-cart">Go to cart</Link>
+		<a href={$page.url.pathname}>
+			<div
+				class="absolute right-0 top-0 flex h-full w-full cursor-default items-center justify-center bg-white/50 backdrop-blur-[2px]"
+			>
+				<div class="flex flex-col gap-6 rounded-xl border border-zinc-200 bg-white px-20 py-16">
+					<div>
+						<h1 class="text-xl font-medium">Successfully added product to cart</h1>
+						<p class="text-sm text-zinc-500">{product?.name} successfully added to your cart</p>
+					</div>
+					<div class="flex w-full justify-center gap-4">
+						<LinkSecondary href={$page.url.pathname} className="w-full">Keep shopping</LinkSecondary
+						>
+						<Link className="w-full" href="/shopping-cart">Go to cart</Link>
+					</div>
 				</div>
 			</div>
-		</div>
+		</a>
 	{/if}
 	{#if product}
 		<div class="flex flex-col gap-8 md:flex-row">
