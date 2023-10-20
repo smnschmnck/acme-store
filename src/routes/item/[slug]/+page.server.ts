@@ -38,7 +38,8 @@ export const actions = {
 
 			await db.insert(productsToShoppingCarts).values({
 				productId: validation.data.productId,
-				shoppingCartId: session.shoppingCart
+				shoppingCartId: session.shoppingCart,
+				amount: Number(validation.data.amount)
 			});
 		} catch (e) {
 			console.log(e);
