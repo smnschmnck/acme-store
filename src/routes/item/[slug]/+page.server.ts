@@ -36,11 +36,18 @@ export const actions = {
 			const session = await getSession(cookies);
 			if (!session) throw new Error('no session');
 
-			await db.insert(productsToShoppingCarts).values({
-				productId: validation.data.productId,
-				shoppingCartId: session.shoppingCart,
-				amount: Number(validation.data.amount)
-			});
+			await db
+				.insert(productsToShoppingCarts)
+				.values({
+					productId: validation.data.productId,
+					shoppingCartId: session.shoppingCart,
+					amount: Number(validation.data.amount)
+				})
+				.onDuplicateKeyUpdate({
+					set: {
+						amount: Number(validation.data.amount)
+					}
+				});
 		} catch (e) {
 			console.log(e);
 			url.searchParams.set('addedToCart', 'failure');
