@@ -19,7 +19,9 @@
 	{#if products.length > 0}
 		<ul class="flex flex-col gap-4">
 			{#each products as product}
-				<li class="flex w-full justify-between border-b border-b-zinc-200 pb-4">
+				<li
+					class="flex w-full flex-col justify-between gap-4 border-b border-b-zinc-200 pb-4 md:flex-row"
+				>
 					<ProductListing
 						classOverrides="p-0"
 						id={product.id}
@@ -28,13 +30,13 @@
 						rating={product.rating}
 						seller={product.seller}
 					/>
-					<div class="flex w-full flex-col items-end gap-8">
+					<div class="flex w-full flex-col gap-8 md:items-end">
 						<form class="flex gap-4" action="?/updateAmount" method="post">
 							<input type="hidden" name="productId" value={product.id} />
 							<div class="w-32">
 								<Input name="amount" type="number" value={String(product.amount)} />
 							</div>
-							<Button type="submit">Update amount</Button>
+							<Button type="submit">Update</Button>
 						</form>
 						<form action="?/deleteProduct" method="post">
 							<input type="hidden" name="productId" value={product.id} />
