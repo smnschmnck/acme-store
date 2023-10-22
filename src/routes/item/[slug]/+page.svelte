@@ -8,7 +8,7 @@
 	import StarRating from '../../../components/ui/StarRating.svelte';
 	import type { PageData } from './$types';
 	import exampleTShirt from './t-shirt-1.avif';
-	import ModalNavigation from '../../../components/ui/ModalNavigation.svelte';
+	import Modal from '../../../components/ui/Modal.svelte';
 
 	export let data: PageData;
 	const { product } = data;
@@ -27,18 +27,20 @@
 
 <div class="py-10">
 	{#if addedToCart === 'success'}
-		<ModalNavigation>
-			<div class="flex flex-col gap-6 rounded-xl border border-zinc-200 bg-white px-20 py-16">
+		<Modal mobileFullscreen id="shoppingCartSuccessModal">
+			<div
+				class="flex h-full w-full flex-col gap-6 border-zinc-200 bg-white px-20 py-16 sm:rounded-xl sm:border"
+			>
 				<div>
 					<h1 class="text-xl font-medium">Successfully added product to cart</h1>
 					<p class="text-sm text-zinc-500">{product?.name} successfully added to your cart</p>
 				</div>
-				<div class="flex w-full justify-center gap-4">
-					<LinkSecondary href="/" className="w-full">Keep shopping</LinkSecondary>
+				<div class="flex w-full flex-col justify-center gap-4 sm:flex-row-reverse">
 					<Link className="w-full" href="/shopping-cart">Go to cart</Link>
+					<LinkSecondary href={product?.id ?? '/'} className="w-full">Keep shopping</LinkSecondary>
 				</div>
 			</div>
-		</ModalNavigation>
+		</Modal>
 	{/if}
 	{#if product}
 		<div class="flex flex-col gap-8 md:flex-row">
