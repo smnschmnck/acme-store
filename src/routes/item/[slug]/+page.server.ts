@@ -8,6 +8,24 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import { JSDOM } from 'jsdom';
 
+const parseDescription = (description?: string | null) => {
+	if (!description) {
+		return '';
+	}
+	if (description.length <= 0) {
+		return '';
+	}
+
+	const dangerousDescription = marked.parse(description ?? '');
+	if (!window) {
+		const window = new JSDOM('').window;
+		const purify = DOMPurify(window);
+		return purify.sanitize(dangerousDescription);
+	}
+
+	return DOMPurify.sanitize('<b>hello there</b>');
+};
+
 export const load: PageServerLoad = async ({ params, url }) => {
 	const addedToCart = url.searchParams.get('addedToCart') as 'success' | 'failure' | undefined;
 	const product = await db.query.products.findFirst({
@@ -21,16 +39,11 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		throw redirect(302, '/404');
 	}
 
-	const dangerousDescription = marked.parse(product.description ?? '');
-	const window = new JSDOM('').window;
-	const purify = DOMPurify(window);
-	const cleanDescription = purify.sanitize(dangerousDescription);
-
 	return {
 		addedToCart: addedToCart,
 		product: {
 			...product,
-			description: cleanDescription
+			description: parseDescription(product.description)
 		}
 	};
 };
