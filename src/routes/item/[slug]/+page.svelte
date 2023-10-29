@@ -69,7 +69,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="flex flex-col gap-4">
+			<div class="flex flex-col gap-4 border-t border-t-zinc-200 pt-8">
 				{@html product.description}
 			</div>
 		</div>
