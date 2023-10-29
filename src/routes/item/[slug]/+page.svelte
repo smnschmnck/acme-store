@@ -28,44 +28,49 @@
 		<CartSuccessModal productName={product?.name ?? 'Product'} />
 	{/if}
 	{#if product}
-		<div class="flex flex-col gap-8 md:flex-row">
-			<div class="hidden md:block">
-				<ImageCarousel images={exampleImages} imageIdPrefix={'imgD'} />
-			</div>
-			<div class="flex w-full flex-col gap-10">
-				<div class="flex w-full justify-between border-b-zinc-200 text-sm md:border-b md:pb-10">
-					<div class="flex flex-col gap-6">
-						<div class="flex flex-col">
-							<h1 class="font-bold">{product.name}</h1>
-							<p class="font-medium text-zinc-500">{product.category}</p>
-							<StarRating rating={Number(product.rating)} />
+		<div class="flex flex-col gap-8">
+			<div class="flex flex-col gap-8 md:flex-row">
+				<div class="hidden md:block">
+					<ImageCarousel images={exampleImages} imageIdPrefix={'imgD'} />
+				</div>
+				<div class="flex w-full flex-col gap-10">
+					<div class="flex w-full justify-between border-b-zinc-200 text-sm md:border-b md:pb-10">
+						<div class="flex flex-col gap-6">
+							<div class="flex flex-col">
+								<h1 class="font-bold">{product.name}</h1>
+								<p class="font-medium text-zinc-500">{product.category}</p>
+								<StarRating rating={Number(product.rating)} />
+							</div>
+							<p class="hidden text-xl font-bold md:block">{product.price}€</p>
 						</div>
-						<p class="hidden text-xl font-bold md:block">{product.price}€</p>
-					</div>
-					<SellerInfo
-						id={product.sellerId}
-						name={product.seller.name}
-						rating={product.seller.rating}
-						ratingCount={product.seller.ratingCount}
-					/>
-				</div>
-				<div class="block md:hidden">
-					<ImageCarousel imageIdPrefix={'imgM'} images={exampleImages} />
-				</div>
-				<p class="block text-xl font-bold md:hidden">{product.price}€</p>
-				<form method="post" class="flex w-full gap-4">
-					<div class="w-48">
-						<Input
-							placeholder="Amount"
-							name="amount"
-							value="1"
-							className="text-center"
-							type="number"
+						<SellerInfo
+							id={product.sellerId}
+							name={product.seller.name}
+							rating={product.seller.rating}
+							ratingCount={product.seller.ratingCount}
 						/>
-						<input type="hidden" name="productId" value={product.id} />
 					</div>
-					<Button type="submit" className="w-full">Add to cart</Button>
-				</form>
+					<div class="block md:hidden">
+						<ImageCarousel imageIdPrefix={'imgM'} images={exampleImages} />
+					</div>
+					<p class="block text-xl font-bold md:hidden">{product.price}€</p>
+					<form method="post" class="flex w-full gap-4">
+						<div class="w-48">
+							<Input
+								placeholder="Amount"
+								name="amount"
+								value="1"
+								className="text-center"
+								type="number"
+							/>
+							<input type="hidden" name="productId" value={product.id} />
+						</div>
+						<Button type="submit" className="w-full">Add to cart</Button>
+					</form>
+				</div>
+			</div>
+			<div class="flex flex-col gap-4">
+				{@html product.description}
 			</div>
 		</div>
 	{/if}
