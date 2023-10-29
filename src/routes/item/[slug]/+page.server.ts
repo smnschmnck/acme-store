@@ -5,8 +5,7 @@ import { productsToShoppingCarts } from '../../../db/schema';
 import { z } from 'zod';
 import { getSession } from '$lib';
 import { marked } from 'marked';
-import DOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
+import DOMPurify from 'isomorphic-dompurify';
 
 const parseDescription = (description?: string | null) => {
 	if (!description) {
@@ -17,13 +16,7 @@ const parseDescription = (description?: string | null) => {
 	}
 
 	const dangerousDescription = marked.parse(description ?? '');
-	if (!window) {
-		const window = new JSDOM('').window;
-		const purify = DOMPurify(window);
-		return purify.sanitize(dangerousDescription);
-	}
-
-	return DOMPurify.sanitize('<b>hello there</b>');
+	return DOMPurify.sanitize(dangerousDescription);
 };
 
 export const load: PageServerLoad = async ({ params, url }) => {
