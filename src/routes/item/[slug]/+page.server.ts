@@ -4,7 +4,7 @@ import type { Actions, PageServerLoad } from './$types';
 import { productsToShoppingCarts } from '../../../db/schema';
 import { z } from 'zod';
 import { getSession } from '$lib';
-import { compile } from 'mdsvex';
+import { marked } from 'marked';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	const addedToCart = url.searchParams.get('addedToCart') as 'success' | 'failure' | undefined;
@@ -19,14 +19,11 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		throw redirect(302, '/404');
 	}
 
-	const compiledDescription = await compile(product?.description ?? '');
-	const description = compiledDescription?.code;
-
 	return {
 		addedToCart: addedToCart,
 		product: {
 			...product,
-			description
+			description: marked.parse(product.description ?? '')
 		}
 	};
 };
