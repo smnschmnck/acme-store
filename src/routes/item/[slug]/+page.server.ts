@@ -5,7 +5,7 @@ import { productsToShoppingCarts } from '../../../db/schema';
 import { z } from 'zod';
 import { getSession } from '$lib';
 import { marked } from 'marked';
-import DOMPurify from 'isomorphic-dompurify';
+import sanitizeHtml from 'sanitize-html';
 
 const parseDescription = (description?: string | null) => {
 	if (!description) {
@@ -16,7 +16,7 @@ const parseDescription = (description?: string | null) => {
 	}
 
 	const dangerousDescription = marked.parse(description ?? '');
-	return DOMPurify.sanitize(dangerousDescription);
+	return sanitizeHtml(dangerousDescription);
 };
 
 export const load: PageServerLoad = async ({ params, url }) => {
