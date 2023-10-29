@@ -7,6 +7,7 @@
 	import type { PageData } from './$types';
 	import exampleTShirt from './t-shirt-1.avif';
 	import CartSuccessModal from './_components/CartSuccessModal.svelte';
+	import ProductDescription from './_components/ProductDescription.svelte';
 
 	export let data: PageData;
 	const { product } = data;
@@ -69,9 +70,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="flex flex-col gap-4 border-t border-t-zinc-200 pt-8">
-				{@html product.description}
-			</div>
+			<ProductDescription description={product.description ?? ''} />
 		</div>
 	{/if}
 </div>
