@@ -2,14 +2,11 @@
 	import ImageCarousel from '../../../components/ImageCarousel.svelte';
 	import SellerInfo from '../../../components/ProductListing/SellerInfo.svelte';
 	import Button from '../../../components/ui/Button.svelte';
-	import Link from '../../../components/ui/Link.svelte';
-	import LinkSecondary from '../../../components/ui/LinkSecondary.svelte';
 	import Input from '../../../components/ui/Input.svelte';
 	import StarRating from '../../../components/ui/StarRating.svelte';
 	import type { PageData } from './$types';
 	import exampleTShirt from './t-shirt-1.avif';
-	import Modal from '../../../components/ui/Modal.svelte';
-	import ButtonSecondary from '../../../components/ui/ButtonSecondary.svelte';
+	import CartSuccessModal from './_components/CartSuccessModal.svelte';
 
 	export let data: PageData;
 	const { product } = data;
@@ -28,24 +25,7 @@
 
 <div class="py-10">
 	{#if addedToCart === 'success'}
-		<Modal>
-			<div class="flex h-full w-full items-center justify-center">
-				<div
-					class="flex h-full w-full flex-col gap-6 border-zinc-200 bg-white px-20 py-16 sm:h-fit sm:w-fit sm:rounded-xl sm:border"
-				>
-					<div>
-						<h1 class="text-xl font-medium">Successfully added product to cart</h1>
-						<p class="text-sm text-zinc-500">{product?.name} successfully added to your cart</p>
-					</div>
-					<div class="flex w-full flex-col justify-center gap-4 sm:flex-row-reverse">
-						<Link className="w-full" href="/shopping-cart">Go to cart</Link>
-						<form method="dialog" class="w-full">
-							<ButtonSecondary className="w-full">Keep shopping</ButtonSecondary>
-						</form>
-					</div>
-				</div>
-			</div>
-		</Modal>
+		<CartSuccessModal productName={product?.name ?? 'Product'} />
 	{/if}
 	{#if product}
 		<div class="flex flex-col gap-8 md:flex-row">
