@@ -5,6 +5,8 @@ import { productsToShoppingCarts } from '../../../db/schema';
 import { z } from 'zod';
 import { getSession } from '$lib';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	const addedToCart = url.searchParams.get('addedToCart') as 'success' | 'failure' | undefined;
@@ -19,11 +21,16 @@ export const load: PageServerLoad = async ({ params, url }) => {
 		throw redirect(302, '/404');
 	}
 
+	const dangerousDescription = marked.parse(product.description ?? '');
+	const window = new JSDOM('').window;
+	const purify = DOMPurify(window);
+	const cleanDescription = purify.sanitize(dangerousDescription);
+
 	return {
 		addedToCart: addedToCart,
 		product: {
 			...product,
-			description: marked.parse(product.description ?? '')
+			description: cleanDescription
 		}
 	};
 };
