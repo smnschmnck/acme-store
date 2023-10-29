@@ -15,6 +15,10 @@
 		@apply text-lg font-medium;
 	}
 
+	#productDescription :global(li) {
+		@apply py-1;
+	}
+
 	#productDescription :global(ul li) {
 		@apply list-disc;
 	}
