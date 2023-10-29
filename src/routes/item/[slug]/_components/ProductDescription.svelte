@@ -7,8 +7,19 @@
 </div>
 
 <style>
+	#productDescription {
+		@apply text-sm;
+	}
+
 	#productDescription :global(h2) {
-		font-size: large;
-		font-weight: bold;
+		@apply text-lg font-medium;
+	}
+
+	#productDescription :global(ul li) {
+		@apply list-disc;
+	}
+
+	#productDescription :global(ol li) {
+		@apply list-decimal;
 	}
 </style>
