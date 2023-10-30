@@ -2,6 +2,7 @@
 	import ProductListing from '../../components/ProductListing/ProductListing.svelte';
 	import Button from '../../components/ui/Button.svelte';
 	import ButtonGhost from '../../components/ui/ButtonGhost.svelte';
+	import ButtonSecondary from '../../components/ui/ButtonSecondary.svelte';
 	import Heading from '../../components/ui/Heading.svelte';
 	import Input from '../../components/ui/Input.svelte';
 	import type { PageData } from './$types';
@@ -40,8 +41,8 @@
 						</form>
 						<form action="?/deleteProduct" method="post">
 							<input type="hidden" name="productId" value={product.id} />
-							<ButtonGhost type="submit" className="text-red-500 hover:text-red-700"
-								>Delete</ButtonGhost
+							<ButtonSecondary type="submit" className="text-red-500 hover:text-red-700"
+								>Delete</ButtonSecondary
 							>
 						</form>
 					</div>
