@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ShoppingCart from '../assets/icons/ShoppingCartIcon.svelte';
+	import ShoppingCart from '../../assets/icons/ShoppingCartIcon.svelte';
 
 	export let productCount: number;
 </script>

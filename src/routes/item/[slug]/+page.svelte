@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ImageCarousel from '../../../components/ImageCarousel.svelte';
+	import ImageCarousel from '../../../components/ProductListing/ImageCarousel.svelte';
 	import SellerInfo from '../../../components/ProductListing/SellerInfo.svelte';
 	import Button from '../../../components/ui/Button.svelte';
 	import Input from '../../../components/ui/Input.svelte';

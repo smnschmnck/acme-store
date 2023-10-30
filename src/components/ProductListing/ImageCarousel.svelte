@@ -1,7 +1,8 @@
 <script lang="ts">
 	export let images: { src: string; alt: string }[];
+	export let maxImages = 10;
 
-	let safeImages = images.slice(0, 10);
+	let safeImages = images.slice(0, maxImages);
 	export let imageIdPrefix: string;
 </script>
 

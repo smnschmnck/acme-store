@@ -1,9 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import '../fonts.css';
-	import Header from '../components/Header.svelte';
+	import Header from '../components/Header/Header.svelte';
 	import type { LayoutData } from './$types';
 	import Heading from '../components/ui/Heading.svelte';
+	import LogoLink from '../components/ui/LogoLink.svelte';
 
 	export let data: LayoutData;
 </script>
@@ -18,9 +19,6 @@
 		<slot />
 	</div>
 	<footer class="absolute bottom-0 h-32 w-full bg-zinc-100 px-6 py-6 sm:px-10 2xl:px-16">
-		<a href="/" class="flex items-center gap-1">
-			<Heading>acme</Heading>
-			<Heading className="font-normal">store</Heading>
-		</a>
+		<LogoLink />
 	</footer>
 </div>

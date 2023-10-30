@@ -1,8 +1,9 @@
 <script lang="ts">
-	import BurgerMenu from '../assets/icons/BurgerMenuIcon.svelte';
 	import ShoppingCartLink from './ShoppingCartLink.svelte';
-	import Heading from './ui/Heading.svelte';
-	import SearchBar from './ui/SearchBar.svelte';
+	import Heading from '../ui/Heading.svelte';
+	import SearchBar from '../ui/SearchBar.svelte';
+	import MobileMenu from './MobileMenu.svelte';
+	import LogoLink from '../ui/LogoLink.svelte';
 
 	export let searchData: {
 		searchQuery: string;
@@ -17,13 +18,10 @@
 >
 	<div class="flex w-full flex-col gap-2 md:flex-row md:gap-16">
 		<div class="flex justify-between">
-			<a href="/" class="flex items-center gap-1">
-				<Heading>acme</Heading>
-				<Heading className="font-normal">store</Heading>
-			</a>
+			<LogoLink />
 			<div class="flex items-center gap-4 md:hidden">
 				<ShoppingCartLink productCount={shoppingCartProductCount} />
-				<BurgerMenu />
+				<MobileMenu id="burgerMenuMd" />
 			</div>
 		</div>
 		<nav class="flex w-full items-center gap-4 md:gap-12">
@@ -43,6 +41,6 @@
 		<ShoppingCartLink productCount={shoppingCartProductCount} />
 	</div>
 	<div class="hidden md:block xl:hidden">
-		<BurgerMenu />
+		<MobileMenu id="burgerMenuSm" />
 	</div>
 </header>
