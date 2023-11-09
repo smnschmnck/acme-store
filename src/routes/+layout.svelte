@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '../app.css';
-	import '../fonts.css';
 	import Header from '../components/Header/Header.svelte';
 	import type { LayoutData } from './$types';
-	import Heading from '../components/ui/Heading.svelte';
 	import LogoLink from '../components/ui/LogoLink.svelte';
+	import '@fontsource-variable/inter';
+	import '@fontsource-variable/outfit';
 
 	export let data: LayoutData;
 </script>

@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Inter']
+				sans: ['Inter Variable']
 			},
 			screens: {
 				'2xl': '1340px'
