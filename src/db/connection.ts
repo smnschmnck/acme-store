@@ -1,17 +1,28 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { drizzle } from 'drizzle-orm/planetscale-serverless';
-import * as schema from './schema';
-import { connect } from '@planetscale/database';
-import { DATABASE_HOST, DATABASE_PASSWORD, DATABASE_USERNAME } from '$env/static/private';
+import { drizzle } from 'drizzle-orm/mysql-proxy';
+import axios, { isAxiosError } from 'axios';
+import { error } from '@sveltejs/kit';
+import { env } from '$env/dynamic/private';
 
-const connection = connect({
-	host: DATABASE_HOST,
-	username: DATABASE_USERNAME,
-	password: DATABASE_PASSWORD,
-	fetch: (url: string, init: any) => {
-		delete (init as any)['cache']; // Remove cache header
-		return fetch(url, init);
+export const db = drizzle(async (sql, params, method) => {
+	try {
+		const credentials = {
+			username: env.DATABASE_USERNAME,
+			password: env.DATABASE_PASSWORD
+		};
+		const rows = await axios.post(env.DATABASE_PROXY, {
+			sql,
+			params,
+			method,
+			credentials
+		});
+
+		return { rows: rows.data };
+	} catch (e: unknown) {
+		if (isAxiosError(e)) {
+			console.error('Error from mysql proxy server: ', e.response?.data);
+		} else {
+			console.error('Unknown error', error);
+		}
+		return { rows: [] };
 	}
 });
-
-export const db = drizzle(connection, { schema });
