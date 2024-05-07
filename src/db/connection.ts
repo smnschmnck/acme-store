@@ -3,8 +3,8 @@ import { drizzle } from 'drizzle-orm/mysql-proxy';
 
 export const db = drizzle(async (sql, params, method) => {
 	const body = { sql, params, method };
-	const res = await fetch(env.DATABASE_PROXY_HOST, {
-		method: 'post',
+	const res = await fetch(`${env.DATABASE_PROXY_HOST}/query`, {
+		method: 'pos`',
 		body: JSON.stringify(body)
 	});
 	const rows = await res.json();
