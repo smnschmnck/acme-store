@@ -1,14 +1,14 @@
 import { env } from '$env/dynamic/private';
-import axios from 'axios';
 import { drizzle } from 'drizzle-orm/mysql-proxy';
 
-export const db = drizzle(async (sql, params, method) => {
-	try {
-		const rows = await axios.post(`${env.DATABASE_PROXY_HOST}/query`, { sql, params, method });
+import type * as Schema from '../db/schema';
 
-		return { rows: rows.data };
-	} catch (e: any) {
-		console.error('Error from mysql proxy server: ', e.response.data);
-		return { rows: [] };
-	}
+export const db = drizzle<typeof Schema>(async (sql, params, method) => {
+	const body = { sql, params, method };
+	console.log('-----BODY-----', body);
+	console.log('-----URL-----', env.DATABASE_PROXY_HOST);
+
+	const x: any = null;
+
+	return x;
 });
