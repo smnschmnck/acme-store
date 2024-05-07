@@ -6,6 +6,8 @@ export const db = drizzle(async (sql, params, method) => {
 	try {
 		const rows = await axios.post(env.DATABASE_PROXY_HOST, { sql, params, method });
 
+		console.log('-----ROWS-----', rows);
+
 		return { rows: rows.data };
 	} catch (e: any) {
 		console.error('Error from mysql proxy server: ', e.response.data);
