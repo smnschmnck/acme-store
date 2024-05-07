@@ -8,7 +8,9 @@ export const db = drizzle<typeof Schema>(async (sql, params, method) => {
 	console.log('-----BODY-----', body);
 	console.log('-----URL-----', env.DATABASE_PROXY_HOST);
 
-	const x: any = null;
+	const res = await fetch(env.DATABASE_PROXY_HOST);
+	console.log('----GET----', await res.text());
 
-	return x;
+	const out: any = null;
+	return out;
 });
