@@ -4,7 +4,12 @@ import { drizzle } from 'drizzle-orm/mysql-proxy';
 import * as schema from '../db/schema';
 
 const proxyClient = async (sql: string, params: any[], method: 'all' | 'execute') => {
-	const body = { sql, params, method };
+	const body = {
+		sql,
+		params,
+		method,
+		secretKey: env.DATABASE_PROXY_SECRET_KEY
+	};
 	const url = `${env.DATABASE_PROXY_HOST}/query`;
 
 	const res = await fetch(url, {
