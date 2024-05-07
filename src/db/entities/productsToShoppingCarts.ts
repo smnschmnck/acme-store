@@ -11,7 +11,7 @@ export const productsToShoppingCarts = mysqlTable(
 		amount: int('amount').notNull().default(1)
 	},
 	(t) => ({
-		pk: primaryKey(t.productId, t.shoppingCartId)
+		pk: primaryKey({ columns: [t.productId, t.shoppingCartId] })
 	})
 );
 
