@@ -16,7 +16,7 @@ export const db = drizzle<typeof Schema>(async (sql, params, method) => {
 			'Content-Type': 'application/json'
 		}
 	});
-	console.log('----POST----', await res.text());
+	console.log('----POST----', await res.json());
 
 	const out: any = null;
 	return out;
