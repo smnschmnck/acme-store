@@ -11,7 +11,10 @@ export const db = drizzle<typeof Schema>(async (sql, params, method) => {
 
 	const res = await fetch(url, {
 		method: 'post',
-		body: JSON.stringify(body)
+		body: JSON.stringify(body),
+		headers: {
+			'Content-Type': 'application/json'
+		}
 	});
 	console.log('----POST----', await res.text());
 
