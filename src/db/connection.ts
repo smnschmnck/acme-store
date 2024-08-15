@@ -1,8 +1,9 @@
 import { env } from '$env/dynamic/private';
-import { drizzle } from 'drizzle-orm/mysql-proxy';
+import { drizzle } from 'drizzle-orm/pg-proxy';
 
 import * as schema from '../db/schema';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const proxyClient = async (sql: string, params: any[], method: 'all' | 'execute') => {
 	const body = {
 		sql,
@@ -20,7 +21,7 @@ const proxyClient = async (sql: string, params: any[], method: 'all' | 'execute'
 		}
 	});
 	if (!res.ok) {
-		console.error('Error from mysql proxy server: ', await res.text());
+		console.error('Error from postgres proxy server: ', await res.text());
 		return { rows: [] };
 	}
 
