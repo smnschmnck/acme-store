@@ -1,14 +1,14 @@
 import { relations, type InferSelectModel } from 'drizzle-orm';
-import { mysqlTable, primaryKey, char, varchar, decimal, int } from 'drizzle-orm/mysql-core';
+import { pgTable, primaryKey, char, varchar, decimal, integer } from 'drizzle-orm/pg-core';
 import { products } from './products';
 
-export const sellers = mysqlTable(
+export const sellers = pgTable(
 	'sellers',
 	{
 		id: char('id', { length: 36 }).notNull(),
 		name: varchar('name', { length: 255 }).notNull(),
 		rating: decimal('rating', { precision: 5, scale: 2 }).notNull().default('0'),
-		ratingCount: int('rating_count').notNull().default(0)
+		ratingCount: integer('rating_count').notNull().default(0)
 	},
 	(table) => {
 		return {
