@@ -1,9 +1,9 @@
-import { and, eq, gt, like, lt } from 'drizzle-orm';
+import { and, eq, gt, ilike, lt } from 'drizzle-orm';
 import type { PageServerLoad } from '../$types';
 import { db } from '../../db/connection';
 import { products } from '../../db/schema';
-import { sortings } from './utils/sortings';
 import { extractSearchParams, type SearchDataParams } from './utils/searchParams';
+import { sortings } from './utils/sortings';
 
 const getProducts = async ({
 	category,
@@ -22,8 +22,8 @@ const getProducts = async ({
 
 	const productsArray = await db.query.products.findMany({
 		where: and(
-			like(products.name, `%${searchQuery}%`),
-			hasCategory ? like(products.category, `%${category}%`) : undefined,
+			ilike(products.name, `%${searchQuery}%`),
+			hasCategory ? ilike(products.category, `%${category}%`) : undefined,
 			productRating ? gt(products.rating, productRating) : undefined,
 			minPrice ? gt(products.price, minPrice) : undefined,
 			maxPrice ? lt(products.price, maxPrice) : undefined,

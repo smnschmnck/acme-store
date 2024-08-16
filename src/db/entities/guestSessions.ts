@@ -1,8 +1,8 @@
 import { type InferSelectModel, relations } from 'drizzle-orm';
-import { mysqlTable, primaryKey, char } from 'drizzle-orm/mysql-core';
+import { pgTable, primaryKey, char } from 'drizzle-orm/pg-core';
 import { productsToShoppingCarts } from './productsToShoppingCarts';
 
-export const guestSessions = mysqlTable(
+export const guestSessions = pgTable(
 	'guest_sessions',
 	{
 		id: char('id', { length: 36 }).notNull().primaryKey(),

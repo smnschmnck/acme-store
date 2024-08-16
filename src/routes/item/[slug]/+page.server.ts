@@ -66,10 +66,9 @@ export const actions = {
 					shoppingCartId: session.shoppingCart,
 					amount: Number(validation.data.amount)
 				})
-				.onDuplicateKeyUpdate({
-					set: {
-						amount: Number(validation.data.amount)
-					}
+				.onConflictDoUpdate({
+					target: [productsToShoppingCarts.productId, productsToShoppingCarts.shoppingCartId],
+					set: { amount: Number(validation.data.amount) }
 				});
 		} catch (e) {
 			console.log(e);
