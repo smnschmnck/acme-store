@@ -11,6 +11,7 @@
 		class="flex aspect-square min-w-full max-w-full bg-zinc-100 lg:max-h-[24rem] lg:min-h-[24rem] lg:min-w-[24rem] lg:max-w-[24rem]"
 	>
 		<div
+			id="scrollContainer"
 			class="flex snap-x snap-mandatory scroll-m-4 overflow-hidden overflow-x-auto scroll-smooth"
 		>
 			{#each safeImages as image, i}
@@ -32,3 +33,13 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	#scrollContainer {
+		scrollbar-width: none; /* For Firefox */
+	}
+
+	#scroll-container::-webkit-scrollbar {
+		display: none;
+	}
+</style>
