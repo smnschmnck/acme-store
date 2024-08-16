@@ -67,7 +67,7 @@ export const actions = {
 					amount: Number(validation.data.amount)
 				})
 				.onConflictDoUpdate({
-					target: productsToShoppingCarts.amount,
+					target: [productsToShoppingCarts.productId, productsToShoppingCarts.shoppingCartId],
 					set: { amount: Number(validation.data.amount) }
 				});
 		} catch (e) {
